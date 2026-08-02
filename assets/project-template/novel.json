@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "title": "{{NOVEL_TITLE}}",
+  "language": "{{LANGUAGE}}",
+  "genre": "",
+  "target_length": "",
+  "point_of_view": "",
+  "tense": "",
+  "status": "planning"
+}

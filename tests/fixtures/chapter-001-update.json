@@ -1,0 +1,107 @@
+{
+  "chapter": "ch-001",
+  "timeline_events": [
+    {
+      "id": "event-arrival",
+      "title": "林抵达旧港",
+      "story_time": "2030-04-01T08:00:00+08:00",
+      "sequence": 1,
+      "chapter": "ch-001",
+      "location": "旧港",
+      "participants": [
+        "char-lin"
+      ],
+      "summary": "林在清晨抵达旧港。",
+      "causes": [],
+      "effects": [
+        "clue-brass-key"
+      ],
+      "kind": "present",
+      "certainty": "confirmed",
+      "visibility": "spoiler-safe",
+      "source_refs": [
+        "ch-001#arrival"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "char-lin",
+      "name": "林",
+      "aliases": [],
+      "role": "调查者",
+      "faction": "无",
+      "status": "active",
+      "first_chapter": "ch-001",
+      "notes": "随身携带一封未拆的信。",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#arrival"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-lin-self",
+      "source": "char-lin",
+      "target": "char-lin",
+      "type": "self",
+      "direction": "directed",
+      "status": "active",
+      "start_chapter": "ch-001",
+      "end_chapter": "",
+      "description": "林试图相信自己的记忆。",
+      "certainty": "confirmed",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#arrival"
+      ]
+    }
+  ],
+  "mysteries": [
+    {
+      "id": "mystery-locked-room",
+      "title": "封闭房间",
+      "question": "谁锁上了档案室？",
+      "status": "open",
+      "introduced_chapter": "ch-001",
+      "resolved_chapter": "",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#locked-room"
+      ]
+    }
+  ],
+  "clues": [
+    {
+      "id": "clue-brass-key",
+      "title": "黄铜钥匙",
+      "description": "钥匙齿痕与档案室旧锁一致。",
+      "status": "planned",
+      "introduced_chapter": "ch-001",
+      "known_by": [
+        "char-lin"
+      ],
+      "planned_payoff": "ch-004",
+      "actual_payoff": "",
+      "certainty": "author-planned",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#brass-key"
+      ]
+    }
+  ],
+  "clue_links": [
+    {
+      "id": "link-key-room",
+      "source": "clue-brass-key",
+      "target": "mystery-locked-room",
+      "type": "supports",
+      "certainty": "author-planned",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#brass-key"
+      ]
+    }
+  ]
+}

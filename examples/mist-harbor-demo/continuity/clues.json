@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "mysteries": [
+    {
+      "id": "mystery-locked-room",
+      "title": "封闭房间",
+      "question": "谁锁上了档案室？",
+      "status": "open",
+      "introduced_chapter": "ch-001",
+      "resolved_chapter": "",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#locked-room"
+      ]
+    }
+  ],
+  "clues": [
+    {
+      "id": "clue-brass-key",
+      "title": "黄铜钥匙",
+      "description": "钥匙齿痕与档案室旧锁一致。",
+      "status": "planned",
+      "introduced_chapter": "ch-001",
+      "known_by": [
+        "char-lin"
+      ],
+      "planned_payoff": "ch-004",
+      "actual_payoff": "",
+      "certainty": "author-planned",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#brass-key"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "link-key-room",
+      "source": "clue-brass-key",
+      "target": "mystery-locked-room",
+      "type": "supports",
+      "certainty": "author-planned",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#brass-key"
+      ]
+    }
+  ]
+}

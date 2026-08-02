@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "event-arrival",
+      "title": "林抵达旧港",
+      "story_time": "2030-04-01T08:00:00+08:00",
+      "sequence": 1,
+      "chapter": "ch-001",
+      "location": "旧港",
+      "participants": [
+        "char-lin"
+      ],
+      "summary": "林在清晨抵达旧港。",
+      "causes": [],
+      "effects": [
+        "clue-brass-key"
+      ],
+      "kind": "present",
+      "certainty": "confirmed",
+      "visibility": "spoiler-safe",
+      "source_refs": [
+        "ch-001#arrival"
+      ]
+    }
+  ]
+}

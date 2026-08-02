@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="und">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novel Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5a657a;
+      --paper: #f6f3ec;
+      --panel: #ffffff;
+      --line: #c8c0b2;
+      --accent: #315d73;
+      --accent-soft: #dcebf0;
+      --focus: #b44b18;
+      --safe: #26734d;
+      --author: #7b3f71;
+      --shadow: 0 10px 30px rgba(23, 32, 51, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    header, main { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding: 2rem 0 1rem; }
+    h1, h2, h3 { line-height: 1.18; }
+    h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.8rem, 5vw, 3.2rem); }
+    #generated-summary { color: var(--muted); margin: .4rem 0 0; }
+    .tabs { display: flex; gap: .5rem; border-bottom: 2px solid var(--line); }
+    [role="tab"] {
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: .6rem .6rem 0 0;
+      padding: .75rem 1rem;
+      color: var(--ink);
+      background: #e8e3da;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    [role="tab"][aria-selected="true"] { color: white; background: var(--accent); }
+    :focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+    .view { padding: 1.25rem 0 2.5rem; }
+    .view[hidden] { display: none; }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: .75rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    label { display: grid; gap: .25rem; color: var(--muted); font-size: .9rem; font-weight: 700; }
+    select, input { min-height: 2.6rem; width: 100%; border: 1px solid var(--line); border-radius: .4rem; background: white; color: var(--ink); padding: .5rem; font: inherit; }
+    .checkbox { display: flex; align-items: center; gap: .5rem; align-self: end; min-height: 2.6rem; }
+    .checkbox input { width: 1.2rem; min-height: 1.2rem; }
+    .surface { border: 1px solid var(--line); border-radius: .75rem; background: var(--panel); box-shadow: var(--shadow); overflow: auto; }
+    .empty { padding: 1.5rem; color: var(--muted); }
+    #timeline-list { list-style: none; margin: 0; padding: 1rem; display: grid; gap: .8rem; }
+    .card {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-left: .35rem solid var(--accent);
+      border-radius: .5rem;
+      padding: .85rem;
+      color: var(--ink);
+      background: white;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+    .card:hover, .card[aria-pressed="true"] { background: var(--accent-soft); }
+    .card-title { display: block; font-size: 1.05rem; font-weight: 800; }
+    .meta { display: flex; flex-wrap: wrap; gap: .35rem .75rem; color: var(--muted); font-size: .86rem; }
+    .graph { width: 100%; min-width: 720px; min-height: 520px; height: auto; display: block; }
+    .graph .edge { stroke: #788399; stroke-width: 2; }
+    .graph .edge.directed { marker-end: url(#arrow); }
+    .graph .node { cursor: pointer; }
+    .graph .node circle, .graph .node rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+    .graph .node:focus circle, .graph .node:focus rect, .graph .node:hover circle, .graph .node:hover rect { stroke: var(--focus); stroke-width: 4; }
+    .graph text { fill: var(--ink); font-size: 13px; pointer-events: none; }
+    .graph-list { margin: 0; padding: 1rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; list-style: none; }
+    .graph-list button { width: 100%; min-height: 2.75rem; border: 1px solid var(--line); border-radius: .4rem; padding: .5rem .7rem; color: var(--ink); background: white; text-align: left; font: inherit; cursor: pointer; }
+    .graph-list button:hover { background: var(--accent-soft); }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: 1rem 0; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--panel); }
+    .legend strong { width: 100%; }
+    .swatch::before { content: ""; display: inline-block; width: .75rem; height: .75rem; margin-right: .35rem; border-radius: 50%; background: var(--accent); }
+    .swatch.safe::before { background: var(--safe); }
+    .swatch.author::before { background: var(--author); }
+    #detail-panel { margin: 0 0 2rem; padding: 1rem; border: 2px solid var(--accent); border-radius: .75rem; background: var(--panel); }
+    #detail-panel dl { display: grid; grid-template-columns: minmax(8rem, auto) 1fr; gap: .35rem 1rem; }
+    #detail-panel dt { font-weight: 800; }
+    #detail-panel dd { margin: 0; overflow-wrap: anywhere; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    @media (max-width: 680px) {
+      header, main { width: min(100% - 1rem, 1180px); }
+      .tabs { overflow-x: auto; }
+      [role="tab"] { flex: 1 0 auto; }
+      .filters { grid-template-columns: 1fr; }
+      .graph { min-width: 620px; height: auto; }
+      #detail-panel dl { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: white; }
+      header, main { width: 100%; }
+      .tabs, .filters { display: none; }
+      .view:not(.disabled-view), .view:not(.disabled-view)[hidden] { display: block !important; break-before: page; }
+      .view.disabled-view, .view.disabled-view[hidden] { display: none !important; }
+      .view:first-of-type { break-before: auto; }
+      .surface, .legend { box-shadow: none; overflow: visible; }
+      .graph { min-width: 0; width: 100%; height: auto !important; max-height: none; }
+      #detail-panel { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>雾港来信</h1>
+    <p id="generated-summary"></p>
+  </header>
+  <main>
+    <nav class="tabs" role="tablist" aria-label="Dashboard views">
+      <button id="timeline-tab" role="tab" type="button" aria-selected="false" aria-controls="timeline-view" tabindex="-1" hidden>Timeline</button>
+      <button id="relationships-tab" role="tab" type="button" aria-selected="false" aria-controls="relationships-view" tabindex="-1" hidden>Relationships</button>
+      <button id="clues-tab" role="tab" type="button" aria-selected="false" aria-controls="clues-view" tabindex="-1" hidden>Clues</button>
+    </nav>
+
+    <section id="timeline-view" class="view" role="tabpanel" aria-labelledby="timeline-tab" hidden>
+      <h2>Timeline</h2>
+      <div class="filters" aria-label="Timeline filters">
+        <label>Chapter<select id="timeline-chapter"></select></label>
+        <label>Character<select id="timeline-character"></select></label>
+        <label>Location<select id="timeline-location"></select></label>
+        <label>Kind<select id="timeline-kind"></select></label>
+        <label>Certainty<select id="timeline-certainty"></select></label>
+      </div>
+      <div class="surface"><ol id="timeline-list" aria-live="polite"></ol></div>
+    </section>
+
+    <section id="relationships-view" class="view" role="tabpanel" aria-labelledby="relationships-tab" hidden>
+      <h2>Character Relationships</h2>
+      <div class="filters" aria-label="Relationship filters">
+        <label>Chapter<select id="relationship-chapter"></select></label>
+        <label>Type<select id="relationship-type"></select></label>
+        <label>Status<select id="relationship-status"></select></label>
+        <label>Certainty<select id="relationship-certainty"></select></label>
+      </div>
+      <div class="surface" role="region" aria-label="Interactive relationship graph and accessible records">
+        <svg id="relationship-graph" class="graph" viewBox="0 0 1000 520" role="group" aria-labelledby="relationship-graph-title">
+          <title id="relationship-graph-title">Relationship graph</title>
+          <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs>
+        </svg>
+        <ul id="relationship-accessible-list" class="graph-list" aria-label="Relationship graph records"></ul>
+      </div>
+    </section>
+
+    <section id="clues-view" class="view" role="tabpanel" aria-labelledby="clues-tab" hidden>
+      <h2>Clue Network</h2>
+      <div class="filters" aria-label="Clue filters">
+        <label>Mystery<select id="clue-mystery"></select></label>
+        <label>Status<select id="clue-status"></select></label>
+        <label>Known by character<select id="clue-known-by"></select></label>
+        <label class="checkbox"><input id="clue-unresolved" type="checkbox">Unresolved only</label>
+      </div>
+      <div class="surface" role="region" aria-label="Interactive clue graph and accessible records">
+        <svg id="clue-graph" class="graph" viewBox="0 0 1000 520" role="group" aria-labelledby="clue-graph-title">
+          <title id="clue-graph-title">Mystery, clue, person, and target graph</title>
+        </svg>
+        <ul id="clue-accessible-list" class="graph-list" aria-label="Clue graph records"></ul>
+      </div>
+    </section>
+
+    <aside class="legend" aria-label="Graph legend">
+      <strong>Legend</strong>
+      <span class="swatch">Status: active/open</span>
+      <span class="swatch">Certainty: confirmed/inferred/author-planned</span>
+      <span class="swatch">Direction: arrow directed; line mutual</span>
+      <span class="swatch safe">Visibility: spoiler-safe</span>
+      <span class="swatch author">Visibility: author</span>
+    </aside>
+
+    <aside id="detail-panel" aria-live="polite" tabindex="-1">
+      <h2>Details</h2>
+      <p>Select a timeline card or graph node for its complete local record.</p>
+    </aside>
+  </main>
+
+  <script>
+    const storyData = {"enabled_views":["timeline","relationships","clues"],"generated_at":"2026-08-02","language":"zh-CN","mode":"reader","story":{"timeline":{"schema_version":1,"events":[{"id":"event-reader-001","title":"林抵达旧港","story_time":"2030-04-01T08:00:00+08:00","sequence":1,"chapter":"chapter-reader-001","location":"旧港","participants":[],"summary":"林在清晨抵达旧港。","causes":[],"effects":[],"kind":"present","certainty":"confirmed","visibility":"spoiler-safe","source_refs":[]}]},"relationships":{"schema_version":1,"characters":[],"relationships":[]},"clues":{"schema_version":1,"mysteries":[],"clues":[],"links":[]}},"title":"雾港来信"};
+    const story = storyData.story;
+    const svgNamespace = "http:" + String.fromCharCode(47, 47) + "www.w3.org/2000/svg";
+
+    /* PURE_CORE_START */
+    function matches(value, selected) {
+      return !selected || value === selected;
+    }
+
+    function circularLayout(nodes, width, height, radius) {
+      const centerX = width / 2;
+      const centerY = height / 2;
+      return nodes.map((node, index) => {
+        const angle = nodes.length === 1 ? 0 : (Math.PI * 2 * index) / nodes.length;
+        return { ...node, x: centerX + Math.cos(angle) * radius, y: centerY + Math.sin(angle) * radius };
+      });
+    }
+
+    function clueColumn(nodeId) {
+      if (nodeId.startsWith("mystery-")) return 0;
+      if (nodeId.startsWith("clue-")) return 1;
+      if (nodeId.startsWith("char-")) return 2;
+      return 3;
+    }
+
+    function relationshipGraphGeometry(nodeCount) {
+      const radius = Math.max(185, nodeCount * 18);
+      const height = Math.max(520, radius * 2 + 140);
+      return { width: Math.max(1000, height), height, radius };
+    }
+
+    function buildRelationshipGraphModel(story, filters) {
+      const relationships = [...story.relationships.relationships]
+        .filter((record) => matches(record.start_chapter, filters.chapter))
+        .filter((record) => matches(record.type, filters.type))
+        .filter((record) => matches(record.status, filters.status))
+        .filter((record) => matches(record.certainty, filters.certainty))
+        .sort((left, right) => left.id.localeCompare(right.id));
+      const usedIds = new Set(relationships.flatMap((record) => [record.source, record.target]));
+      const nodes = story.relationships.characters
+        .filter((record) => usedIds.has(record.id))
+        .sort((left, right) => left.id.localeCompare(right.id));
+      return { nodes, edges: relationships };
+    }
+
+    function buildClueGraphModel(story, filters) {
+      const linkable = [
+        ...story.timeline.events,
+        ...story.relationships.characters,
+        ...story.relationships.relationships,
+        ...story.clues.mysteries,
+        ...story.clues.clues,
+      ];
+      const records = new Map(linkable.map((record) => [record.id, record]));
+      const allowed = new Set();
+      linkable.forEach((record) => {
+        if (record.id.startsWith("mystery-")) {
+          if (filters.mystery && record.id !== filters.mystery) return;
+          if (filters.unresolvedOnly && record.status === "resolved") return;
+        }
+        if (record.id.startsWith("clue-")) {
+          if (filters.status && record.status !== filters.status) return;
+          if (filters.knownBy && !record.known_by.includes(filters.knownBy)) return;
+          if (filters.unresolvedOnly && record.status === "resolved") return;
+        }
+        allowed.add(record.id);
+      });
+      const links = story.clues.links
+        .filter((link) => allowed.has(link.source) && allowed.has(link.target))
+        .sort((left, right) => left.id.localeCompare(right.id));
+      const adjacency = new Map();
+      links.forEach((link) => {
+        if (!adjacency.has(link.source)) adjacency.set(link.source, []);
+        if (!adjacency.has(link.target)) adjacency.set(link.target, []);
+        adjacency.get(link.source).push(link.target);
+        adjacency.get(link.target).push(link.source);
+      });
+      let seeds;
+      if (filters.mystery) {
+        seeds = allowed.has(filters.mystery) ? [filters.mystery] : [];
+      } else if (filters.status || filters.knownBy) {
+        seeds = story.clues.clues
+          .filter((record) => allowed.has(record.id))
+          .map((record) => record.id);
+      } else {
+        seeds = story.clues.mysteries
+          .filter((record) => allowed.has(record.id))
+          .map((record) => record.id);
+        if (!seeds.length) {
+          seeds = story.clues.clues
+            .filter((record) => allowed.has(record.id))
+            .map((record) => record.id);
+        }
+      }
+      const visited = new Set();
+      const pending = [...seeds];
+      while (pending.length) {
+        const identifier = pending.shift();
+        if (visited.has(identifier)) continue;
+        visited.add(identifier);
+        (adjacency.get(identifier) || []).forEach((neighbor) => {
+          if (!visited.has(neighbor)) pending.push(neighbor);
+        });
+      }
+      return {
+        nodes: [...visited]
+          .map((identifier) => records.get(identifier))
+          .filter(Boolean)
+          .sort((left, right) => left.id.localeCompare(right.id)),
+        links: links.filter((link) => visited.has(link.source) && visited.has(link.target)),
+      };
+    }
+
+    function clueGraphLayout(nodes) {
+      const columns = [[], [], [], []];
+      [...nodes]
+        .sort((left, right) => left.id.localeCompare(right.id))
+        .forEach((node) => columns[clueColumn(node.id)].push(node));
+      const maximumRows = Math.max(1, ...columns.map((column) => column.length));
+      const height = Math.max(520, 110 + maximumRows * 85);
+      const positioned = [];
+      columns.forEach((column, columnIndex) => column.forEach((node, rowIndex) => {
+        positioned.push({
+          ...node,
+          x: 130 + columnIndex * 245,
+          y: 70 + rowIndex * 85,
+        });
+      }));
+      return { width: 1000, height, nodes: positioned };
+    }
+
+    function shortLabel(value, maximumLength = 18) {
+      const characters = [...String(value)];
+      return characters.length > maximumLength
+        ? characters.slice(0, maximumLength - 1).join("") + "…"
+        : characters.join("");
+    }
+
+    function activateOnKeyboard(event, action) {
+      if (event.key !== "Enter" && event.key !== " ") return false;
+      event.preventDefault();
+      action();
+      return true;
+    }
+    /* PURE_CORE_END */
+
+    function svgElement(name, attributes = {}) {
+      const element = document.createElementNS(svgNamespace, name);
+      Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, String(value)));
+      return element;
+    }
+
+    function labelFor(record) {
+      return record.name || record.title || record.id;
+    }
+
+    function addOptions(selectId, values, allLabel = "All") {
+      const select = document.getElementById(selectId);
+      select.replaceChildren(new Option(allLabel, ""));
+      const options = new Map();
+      values.filter(Boolean).forEach((entry) => {
+        const option = typeof entry === "object"
+          ? entry
+          : { value: entry, label: entry };
+        if (option.value) options.set(option.value, option.label || option.value);
+      });
+      [...options.entries()]
+        .sort((left, right) => String(left[1]).localeCompare(String(right[1])))
+        .forEach(([value, label]) => select.add(new Option(label, value)));
+      select.addEventListener("change", renderAll);
+    }
+
+    function showDetails(record) {
+      const panel = document.getElementById("detail-panel");
+      const heading = document.createElement("h2");
+      heading.textContent = labelFor(record);
+      const list = document.createElement("dl");
+      Object.keys(record).sort().forEach((key) => {
+        const term = document.createElement("dt");
+        const detail = document.createElement("dd");
+        term.textContent = key;
+        detail.textContent = Array.isArray(record[key]) ? record[key].join(", ") : String(record[key] ?? "");
+        list.append(term, detail);
+      });
+      panel.replaceChildren(heading, list);
+      panel.focus();
+    }
+
+    function selectable(element, record) {
+      element.setAttribute("tabindex", "0");
+      element.setAttribute("role", "button");
+      element.setAttribute("aria-label", "Show details for " + labelFor(record));
+      element.addEventListener("click", () => showDetails(record));
+      element.addEventListener("keydown", (event) => activateOnKeyboard(
+        event, () => showDetails(record)
+      ));
+    }
+
+    function currentValue(id) {
+      return document.getElementById(id).value;
+    }
+
+    function renderAccessibleList(listId, entries) {
+      const list = document.getElementById(listId);
+      list.replaceChildren();
+      entries.forEach(({ kind, record }) => {
+        const item = document.createElement("li");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = kind + ": " + labelFor(record);
+        button.addEventListener("click", () => showDetails(record));
+        item.append(button);
+        list.append(item);
+      });
+    }
+
+    function renderTimeline() {
+      const characterNames = new Map(story.relationships.characters.map((record) => [record.id, record.name]));
+      const events = [...story.timeline.events]
+        .filter((event) => matches(event.chapter, currentValue("timeline-chapter")))
+        .filter((event) => !currentValue("timeline-character") || event.participants.includes(currentValue("timeline-character")))
+        .filter((event) => matches(event.location, currentValue("timeline-location")))
+        .filter((event) => matches(event.kind, currentValue("timeline-kind")))
+        .filter((event) => matches(event.certainty, currentValue("timeline-certainty")))
+        .sort((left, right) => Number(left.sequence) - Number(right.sequence) || left.id.localeCompare(right.id));
+      const list = document.getElementById("timeline-list");
+      list.replaceChildren();
+      if (!events.length) {
+        const empty = document.createElement("li");
+        empty.className = "empty";
+        empty.textContent = "No timeline events match these filters.";
+        list.append(empty);
+        return;
+      }
+      events.forEach((event) => {
+        const item = document.createElement("li");
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "card";
+        card.setAttribute("aria-pressed", "false");
+        const title = document.createElement("span");
+        title.className = "card-title";
+        title.textContent = event.title;
+        const meta = document.createElement("span");
+        meta.className = "meta";
+        if (event.story_time) {
+          const time = document.createElement("time");
+          time.dateTime = event.story_time;
+          time.textContent = event.story_time;
+          meta.append(time);
+        }
+        const details = document.createElement("span");
+        details.textContent = [event.chapter, event.location, event.kind, event.certainty, ...event.participants.map((id) => characterNames.get(id) || id)].filter(Boolean).join(" · ");
+        meta.append(details);
+        const summary = document.createElement("span");
+        summary.textContent = event.summary;
+        card.append(title, meta, summary);
+        card.addEventListener("click", () => showDetails(event));
+        item.append(card);
+        list.append(item);
+      });
+    }
+
+    function renderRelationships() {
+      const model = buildRelationshipGraphModel(story, {
+        chapter: currentValue("relationship-chapter"),
+        type: currentValue("relationship-type"),
+        status: currentValue("relationship-status"),
+        certainty: currentValue("relationship-certainty"),
+      });
+      const geometry = relationshipGraphGeometry(model.nodes.length);
+      const characters = circularLayout(
+        model.nodes,
+        geometry.width,
+        geometry.height,
+        geometry.radius,
+      );
+      const positions = new Map(characters.map((record) => [record.id, record]));
+      const svg = document.getElementById("relationship-graph");
+      svg.setAttribute("viewBox", `0 0 ${geometry.width} ${geometry.height}`);
+      svg.style.height = geometry.height + "px";
+      [...svg.children].filter((child) => child.tagName !== "title" && child.tagName !== "defs").forEach((child) => child.remove());
+      model.edges.forEach((relationship) => {
+        const source = positions.get(relationship.source);
+        const target = positions.get(relationship.target);
+        if (!source || !target) return;
+        const line = svgElement("line", { x1: source.x, y1: source.y, x2: target.x, y2: target.y, class: "edge " + relationship.direction });
+        const title = svgElement("title");
+        title.textContent = relationship.type + ": " + relationship.description;
+        line.append(title);
+        selectable(line, relationship);
+        svg.append(line);
+      });
+      characters.forEach((character) => {
+        const group = svgElement("g", { class: "node" });
+        const title = svgElement("title");
+        title.textContent = labelFor(character);
+        const circle = svgElement("circle", { cx: character.x, cy: character.y, r: 48 });
+        const text = svgElement("text", { x: character.x, y: character.y + 4, "text-anchor": "middle" });
+        text.textContent = shortLabel(character.name, 14);
+        group.append(title, circle, text);
+        selectable(group, character);
+        svg.append(group);
+      });
+      renderAccessibleList(
+        "relationship-accessible-list",
+        [
+          ...model.nodes.map((record) => ({ kind: "Character", record })),
+          ...model.edges.map((record) => ({ kind: "Relationship", record })),
+        ],
+      );
+    }
+
+    function renderClues() {
+      const model = buildClueGraphModel(story, {
+        mystery: currentValue("clue-mystery"),
+        status: currentValue("clue-status"),
+        knownBy: currentValue("clue-known-by"),
+        unresolvedOnly: document.getElementById("clue-unresolved").checked,
+      });
+      const layout = clueGraphLayout(model.nodes);
+      const positions = new Map(layout.nodes.map((record) => [record.id, record]));
+      const svg = document.getElementById("clue-graph");
+      svg.setAttribute("viewBox", `0 0 ${layout.width} ${layout.height}`);
+      svg.style.height = layout.height + "px";
+      [...svg.children].filter((child) => child.tagName !== "title").forEach((child) => child.remove());
+      ["Mystery", "Clue", "Person", "Target"].forEach((label, index) => {
+        const text = svgElement("text", { x: 130 + index * 245, y: 28, "text-anchor": "middle", "font-weight": "bold" });
+        text.textContent = label;
+        svg.append(text);
+      });
+      model.links.forEach((link) => {
+        const source = positions.get(link.source);
+        const target = positions.get(link.target);
+        if (!source || !target) return;
+        const line = svgElement("line", { x1: source.x, y1: source.y, x2: target.x, y2: target.y, class: "edge directed" });
+        const title = svgElement("title");
+        title.textContent = link.type + " (" + link.certainty + ")";
+        line.append(title);
+        selectable(line, link);
+        svg.append(line);
+      });
+      layout.nodes.forEach((node) => {
+        const position = node;
+        const group = svgElement("g", { class: "node" });
+        const title = svgElement("title");
+        title.textContent = labelFor(node);
+        const box = svgElement("rect", { x: position.x - 82, y: position.y - 25, width: 164, height: 50, rx: 10 });
+        const text = svgElement("text", { x: position.x, y: position.y + 4, "text-anchor": "middle" });
+        text.textContent = shortLabel(labelFor(node), 18);
+        group.append(title, box, text);
+        selectable(group, node);
+        svg.append(group);
+      });
+      renderAccessibleList(
+        "clue-accessible-list",
+        [
+          ...model.nodes.map((record) => ({ kind: "Node", record })),
+          ...model.links.map((record) => ({ kind: "Link", record })),
+        ],
+      );
+    }
+
+    function renderAll() {
+      renderTimeline();
+      renderRelationships();
+      renderClues();
+    }
+
+    function activateTab(tab, focus = true) {
+      document.querySelectorAll('[role="tab"]').forEach((candidate) => {
+        const active = candidate === tab;
+        candidate.setAttribute("aria-selected", String(active));
+        candidate.tabIndex = active ? 0 : -1;
+        document.getElementById(candidate.getAttribute("aria-controls")).hidden = !active;
+      });
+      if (focus) tab.focus();
+    }
+
+    const enabledViews = new Set(storyData.enabled_views);
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    tabs.forEach((tab) => {
+      const viewName = tab.id.replace(/-tab$/, "");
+      const enabled = enabledViews.has(viewName);
+      tab.hidden = !enabled;
+      const view = document.getElementById(tab.getAttribute("aria-controls"));
+      view.classList.toggle("disabled-view", !enabled);
+      view.hidden = true;
+    });
+    const enabledTabs = tabs.filter((tab) => !tab.hidden);
+    enabledTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activateTab(tab, false));
+      tab.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activateTab(tab);
+        } else if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+          event.preventDefault();
+          const change = event.key === "ArrowRight" ? 1 : -1;
+          activateTab(enabledTabs[(index + change + enabledTabs.length) % enabledTabs.length]);
+        }
+      });
+    });
+    activateTab(enabledTabs[0], false);
+
+    document.documentElement.lang = storyData.language || "und";
+    document.title = storyData.title + " — Novel Dashboard";
+    document.getElementById("generated-summary").textContent = "Generated from canonical data: " + storyData.generated_at + " · " + storyData.mode + " view";
+    addOptions("timeline-chapter", story.timeline.events.map((record) => record.chapter));
+    addOptions("timeline-character", story.relationships.characters.map((record) => ({ value: record.id, label: record.name })));
+    addOptions("timeline-location", story.timeline.events.map((record) => record.location));
+    addOptions("timeline-kind", story.timeline.events.map((record) => record.kind));
+    addOptions("timeline-certainty", story.timeline.events.map((record) => record.certainty));
+    addOptions("relationship-chapter", story.relationships.relationships.map((record) => record.start_chapter));
+    addOptions("relationship-type", story.relationships.relationships.map((record) => record.type));
+    addOptions("relationship-status", story.relationships.relationships.map((record) => record.status));
+    addOptions("relationship-certainty", story.relationships.relationships.map((record) => record.certainty));
+    addOptions("clue-mystery", story.clues.mysteries.map((record) => ({ value: record.id, label: record.title })));
+    addOptions("clue-status", story.clues.clues.map((record) => record.status));
+    addOptions("clue-known-by", story.relationships.characters.map((record) => ({ value: record.id, label: record.name })));
+    document.getElementById("clue-unresolved").addEventListener("change", renderAll);
+    renderAll();
+  </script>
+</body>
+</html>

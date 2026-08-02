@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.md text diff=markdown
+*.json text
+*.py text diff=python
+*.html text

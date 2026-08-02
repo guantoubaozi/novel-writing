@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "characters": [
+    {
+      "id": "char-lin",
+      "name": "林",
+      "aliases": [],
+      "role": "调查者",
+      "faction": "无",
+      "status": "active",
+      "first_chapter": "ch-001",
+      "notes": "随身携带一封未拆的信。",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#arrival"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-lin-self",
+      "source": "char-lin",
+      "target": "char-lin",
+      "type": "self",
+      "direction": "directed",
+      "status": "active",
+      "start_chapter": "ch-001",
+      "end_chapter": "",
+      "description": "林在证据异常时选择留下调查。",
+      "certainty": "confirmed",
+      "visibility": "author",
+      "source_refs": [
+        "ch-001#brass-key"
+      ]
+    }
+  ]
+}

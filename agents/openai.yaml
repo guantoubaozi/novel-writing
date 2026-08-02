@@ -1,0 +1,4 @@
+interface:
+  display_name: "Novel Writing"
+  short_description: "从构思到完稿，含审校与可视化的长篇小说写作 Skill"
+  default_prompt: "Use $novel-writing to develop my novel from premise and outline through reviewed chapters and story visualizations."

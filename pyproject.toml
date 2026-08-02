@@ -1,0 +1,10 @@
+[project]
+name = "novel-writing"
+version = "0.1.0"
+description = "An author-controlled skill for planning, writing, reviewing, and visualizing long-form fiction with reliable continuity and story-state management."
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
