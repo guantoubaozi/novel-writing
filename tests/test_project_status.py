@@ -15,7 +15,7 @@ class ProjectStatusTests(unittest.TestCase):
         self.tempdir = tempfile.TemporaryDirectory()
         self.project = Path(self.tempdir.name)
         self.write("novel.json", json.dumps({"title": "Test Novel"}))
-        self.write("chapters/chapter-001.md", "他回家了。")
+        self.write("chapters/chapter-001.md", "She finally went home.")
         self.write("chapters/chapter-002.md", "He went home.")
         self.write("chapters/index.md", "ignored")
         self.write("continuity/timeline.json", json.dumps({"schema_version": 1, "events": []}))

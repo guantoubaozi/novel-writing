@@ -11,10 +11,10 @@ from scripts.init_project import initialize_project
 class InitProjectTests(unittest.TestCase):
     def test_initializes_complete_project(self):
         with TemporaryDirectory() as directory:
-            target = Path(directory) / "归途"
-            initialize_project(target, "归途")
+            target = Path(directory) / "homeward"
+            initialize_project(target, "Homeward")
             config = json.loads((target / "novel.json").read_text(encoding="utf-8"))
-            self.assertEqual(config["title"], "归途")
+            self.assertEqual(config["title"], "Homeward")
             self.assertEqual(config["schema_version"], 1)
             self.assertTrue((target / "continuity" / "timeline.json").is_file())
             self.assertTrue((target / "visualizations" / "snapshots").is_dir())

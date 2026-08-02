@@ -1,21 +1,21 @@
-# 雾港来信示例项目
+# Letters from Mist Harbor Demo
 
-这个最小示例展示 Novel Writing 的项目组织方式：
+This minimal project demonstrates how Novel Writing organizes a long-form fiction project:
 
-- `story-bible.md` 保存核心设定、主题和创作边界。
-- `outline/` 保存总体结构与作者维护的章节边界。
-- `characters/` 和 `style/` 保存人物知识边界与叙述声音。
-- `chapters/chapter-001.md` 提供一章带可引用锚点的示例正文。
-- `continuity/` 保存由作者确认的结构化故事状态。
-- `visualizations/` 可生成作者版和防剧透读者版 Dashboard。
+- `story-bible.md` stores the core premise, themes, and creative boundaries.
+- `outline/` stores the overall structure and author-maintained chapter boundaries.
+- `characters/` and `style/` store character knowledge limits and narrative voice.
+- `chapters/chapter-001.md` provides an example chapter with referenceable anchors.
+- `continuity/` stores author-confirmed structured story state.
+- `visualizations/` contains author and spoiler-safe reader dashboards.
 
-查看状态：
+Show project status:
 
 ```bash
 python3 ../../scripts/project_status.py .
 ```
 
-重新生成作者版 Dashboard：
+Regenerate the author dashboard:
 
 ```bash
 python3 ../../scripts/render_dashboard.py . --mode author

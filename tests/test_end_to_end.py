@@ -21,12 +21,12 @@ class EndToEndTests(unittest.TestCase):
         self.addCleanup(self.temporary_directory.cleanup)
         self.project = initialize_project(
             Path(self.temporary_directory.name) / "project",
-            "雾港来信",
+            "Letters from Mist Harbor",
         )
 
     def test_complete_free_project_data_and_visualization_workflow(self):
         chapter = self.project / "chapters" / "chapter-001.md"
-        chapter.write_text("# 第一章：旧港\n\n林在清晨抵达旧港。\n", encoding="utf-8")
+        chapter.write_text("# Chapter One: Old Harbor\n\nMira arrives at Old Harbor at dawn.\n", encoding="utf-8")
         packet = json.loads(FIXTURE.read_text(encoding="utf-8"))
         merged, summary = merge_update_packet(load_story_data(self.project), packet)
         for domain, relative_path in DATA_FILES.items():
@@ -48,8 +48,8 @@ class EndToEndTests(unittest.TestCase):
             self.project / "visualizations" / "reader-dashboard.html",
             "reader",
         )
-        self.assertIn("黄铜钥匙", author_path.read_text(encoding="utf-8"))
-        self.assertNotIn("黄铜钥匙", reader_path.read_text(encoding="utf-8"))
+        self.assertIn("Brass Key", author_path.read_text(encoding="utf-8"))
+        self.assertNotIn("Brass Key", reader_path.read_text(encoding="utf-8"))
 
     def test_update_fixture_has_stable_digest(self):
         digest = hashlib.sha256(FIXTURE.read_bytes()).hexdigest()

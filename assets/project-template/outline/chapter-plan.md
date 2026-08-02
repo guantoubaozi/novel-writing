@@ -1,6 +1,6 @@
-# 章节计划
+# Chapter Plan
 
-## 章节列表
+## Chapter List
 
 
-## 节奏与转折
+## Pacing and Turning Points

@@ -1,16 +1,16 @@
-# 总体大纲
+# Master Outline
 
-## 故事概述
+## Story Overview
 
-林来到旧港核查一批即将销毁的航运档案。她发现母亲失踪当晚的值班记录被换过，而自己携带的黄铜钥匙能够打开本应永久封闭的档案室。追查迫使她在官方证据、个人记忆和仍活着的人之间作出选择。
+Mira Lin comes to Old Harbor to inspect shipping records scheduled for destruction. She discovers that the duty log from the night her mother disappeared was replaced and that the brass key she carries opens an archive room supposedly sealed forever. The investigation forces her to choose among official evidence, personal memory, and the people still alive.
 
-## 结构节点
+## Structural Beats
 
-- 开端：林抵达旧港，收到时间异常的信，并发现封闭档案室。
-- 中点：她确认记录造假不是为了掩盖一次事故，而是在保护仍在运行的秘密航线。
-- 危机：公开档案会证明母亲清白，也会暴露当年被救下的一群人。
-- 高潮：林决定公开可验证的责任链，同时保留幸存者身份。
+- Opening: Mira arrives at Old Harbor, receives a letter with an impossible date, and discovers the sealed archive room.
+- Midpoint: She confirms that the falsified records conceal not an accident but a secret route that still operates.
+- Crisis: Publishing the archive would clear her mother's name while exposing the people rescued years ago.
+- Climax: Mira releases a verifiable chain of responsibility while protecting the survivors' identities.
 
-## 结局方向
+## Ending Direction
 
-档案馆被拆除，但林建立了一套由多方保管、可相互验证的新档案。信件的真正发送方式留作第二卷问题。
+The archive is demolished, but Mira establishes a new record system distributed among independent custodians who can verify one another. The letter's true delivery method remains a question for the second volume.

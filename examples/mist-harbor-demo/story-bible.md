@@ -1,15 +1,15 @@
-# 故事圣经
+# Story Bible
 
-## 核心设定
+## Core Premise
 
-2030 年，一座因旧航运衰落而半废弃的港城开始拆除百年档案馆。调查员林收到一封来自失踪母亲的信，落款日期却是次日。
+In 2030, a port city left half-abandoned by the collapse of old shipping routes begins demolishing its century-old archive. Investigator Mira Lin receives a letter from her missing mother, but the letter is dated tomorrow.
 
-## 主题与命题
+## Themes and Dramatic Questions
 
-记忆是否因为被记录才可信？一个人应当相信证据，还是相信为自己承担后果的人？
+Does memory become trustworthy because it is recorded? Should a person trust documentary evidence or the people willing to bear consequences for them?
 
-## 创作边界
+## Creative Boundaries
 
-- 悬疑来自信息差和人物选择，不依靠无预警超自然能力解决。
-- 不提前确认信件来源；第一卷只证明档案记录曾被系统性改写。
-- 保持克制、具象的第三人称限知叙述。
+- Build suspense from information gaps and character choices, not unforeshadowed supernatural solutions.
+- Do not confirm the letter's origin early; the first volume proves only that archival records were systematically altered.
+- Maintain restrained, concrete third-person limited narration.

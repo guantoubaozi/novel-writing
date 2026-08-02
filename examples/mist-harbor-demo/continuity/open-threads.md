@@ -1,6 +1,6 @@
-# 未解决线索
+# Open Threads
 
-## 待推进事项
+## Threads to Advance
 
 
-## 待回收事项
+## Payoffs to Resolve

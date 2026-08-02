@@ -1,24 +1,24 @@
-# 章节计划
+# Chapter Plan
 
-## 章节列表
+## Chapter List
 
-### ch-001 第一章：旧港
+### ch-001 Chapter One: Old Harbor
 
-- 进入条件：林带着未拆的信抵达旧港。
-- 目标：确认档案馆交接清单并当天离开。
-- 阻力：档案员拒绝承认封闭档案室仍然存在。
-- 转折：林的黄铜钥匙与门锁吻合。
-- 结果：她决定留下调查。
-- 退出压力：信封落款日期是明天。
+- Entry condition: Mira arrives at Old Harbor carrying the unopened letter.
+- Goal: Verify the archive handover list and leave that day.
+- Resistance: The keeper refuses to acknowledge that the sealed archive room still exists.
+- Turn: Mira's brass key fits the door.
+- Outcome: She decides to remain and investigate.
+- Exit pressure: The letter is dated tomorrow.
 
-### ch-002 第二章：被换过的纸
+### ch-002 Chapter Two: The Replaced Page
 
-- 进入条件：林进入封闭档案室。
-- 目标：找到母亲失踪当晚的原始值班记录。
-- 阻力：同一事件存在两套互相矛盾的档案。
-- 转折：旧纸上的压痕指向一个未登记的保管人。
-- 结果：林获得下一位调查对象。
+- Entry condition: Mira enters the sealed archive room.
+- Goal: Find the original duty log from the night her mother disappeared.
+- Resistance: Two contradictory records describe the same event.
+- Turn: Impressions on an old page point to an unregistered custodian.
+- Outcome: Mira identifies the next person to investigate.
 
-## 节奏与转折
+## Pacing and Turning Points
 
-第一章以发现问题为主，第二章把异常转化为可追查的人为行动。避免连续使用纯信息揭示，每次发现都必须改变人物选择。
+Chapter one focuses on discovering the problem. Chapter two turns the anomaly into traceable human action. Avoid consecutive information-only reveals; every discovery must change a character's choice.

@@ -1,37 +1,37 @@
 # Contributing
 
-感谢你改进 Novel Writing。
+Thank you for improving Novel Writing.
 
-## 开始之前
+## Before you begin
 
-- 先搜索已有 Issue，避免重复工作。
-- 功能变更请说明它解决的作者问题和对现有项目格式的影响。
-- 不要在测试、示例或 Issue 中提交真实未公开小说、个人信息或受版权保护的长篇文本。
+- Search existing issues before starting work to avoid duplication.
+- For feature changes, explain the author problem being solved and any effect on the existing project format.
+- Do not submit real unpublished manuscripts, personal information, or copyrighted long-form text in tests, examples, or issues.
 
-## 本地验证
+## Local validation
 
-要求 Python 3.9 或更高版本。
+Python 3.9 or later is required.
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 /path/to/skill-creator/scripts/quick_validate.py .
 ```
 
-## 设计原则
+## Design principles
 
-- 作者对正史拥有最终决定权。
-- 推断和作者计划不能静默升级为 `confirmed`。
-- 先报告矛盾，再提出修复。
-- 默认保留原稿，不静默覆盖正文。
-- 结构化数据写入必须先验证，并保持失败时不产生部分更新。
-- 读者视图不能泄露作者专属、计划中或隐藏内容。
-- `SKILL.md` 保持精简，把详细规则放进直接引用的 `references/` 文件。
+- The author has final authority over canon.
+- Inferences and author plans must never be silently promoted to `confirmed`.
+- Report contradictions before proposing repairs.
+- Preserve source drafts by default and never silently overwrite manuscript prose.
+- Validate structured data before writing and ensure failures cannot leave partial updates.
+- Reader views must not expose author-only, planned, or hidden information.
+- Keep `SKILL.md` concise and place detailed rules in directly referenced files under `references/`.
 
 ## Pull Request
 
-PR 请包含：
+Pull requests should include:
 
-1. 变更动机和用户场景。
-2. 行为变化与兼容性说明。
-3. 新增或更新的测试。
-4. 本地测试结果。
+1. The motivation and user scenario.
+2. Behavioral changes and compatibility notes.
+3. Added or updated tests.
+4. Local test results.

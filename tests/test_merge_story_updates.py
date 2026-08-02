@@ -117,7 +117,7 @@ class MergeStoryUpdatesTests(unittest.TestCase):
             "clue_links",
         ):
             existing_packet[key][0]["source_refs"] = ["ch-000#old"]
-        existing_packet["characters"][0]["notes"] = "旧 notes"
+        existing_packet["characters"][0]["notes"] = "outdated notes"
         data, _ = merge_update_packet(empty_data(), existing_packet)
         packet = copy.deepcopy(original_packet)
         additions = copy.deepcopy(original_packet)
@@ -161,7 +161,7 @@ class MergeStoryUpdatesTests(unittest.TestCase):
             self.assertEqual(len(records), 2)
             self.assertEqual(records[0]["source_refs"], original_packet[packet_key][0]["source_refs"])
             self.assertEqual(records[1]["id"], id_prefixes[packet_key])
-        self.assertEqual(merged["relationships"]["characters"][0]["notes"], "随身携带一封未拆的信。")
+        self.assertEqual(merged["relationships"]["characters"][0]["notes"], "Carries an unopened letter with her.")
         self.assertEqual(merged["clues"]["links"][1]["target"], "mystery-second")
 
     def test_invalid_merged_data_reports_every_validation_error(self):
@@ -184,7 +184,7 @@ class MergeStoryUpdatesTests(unittest.TestCase):
         merged, summary = merge_update_packet(data, packet)
 
         self.assertEqual(summary["characters_updated"], 1)
-        self.assertEqual(merged["relationships"]["characters"][0]["notes"], "随身携带一封未拆的信。")
+        self.assertEqual(merged["relationships"]["characters"][0]["notes"], "Carries an unopened letter with her.")
 
     def test_packet_shape_errors_are_clear(self):
         cases = []

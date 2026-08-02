@@ -16,7 +16,7 @@ def _is_template_destination(destination: Path, template_root: Path) -> bool:
     return destination == template_root or template_root in destination.parents
 
 
-def initialize_project(destination: Path, title: str, language: str = "zh-CN") -> Path:
+def initialize_project(destination: Path, title: str, language: str = "en") -> Path:
     """Initialize an empty project directory and return its resolved path."""
     destination = destination.resolve()
     template_root = TEMPLATE_ROOT.resolve()
@@ -55,7 +55,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Initialize a novel project.")
     parser.add_argument("project_dir", metavar="PROJECT_DIR", type=Path)
     parser.add_argument("--title", required=True)
-    parser.add_argument("--language", default="zh-CN")
+    parser.add_argument("--language", default="en")
     arguments = parser.parse_args()
 
     try:

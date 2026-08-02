@@ -1,37 +1,37 @@
-# 第一章：旧港
+# Chapter One: Old Harbor
 
 <a id="arrival"></a>
 
-林在清晨抵达旧港。她必须在午前签完交接清单，赶上十二点离港的渡船。
+Mira Lin reached Old Harbor at dawn. She had to sign the handover list before noon and catch the twelve o'clock ferry out.
 
-潮水还没有退尽，石阶下面漂着一层薄油。她把未拆的信压在外套内袋里，沿着仓库之间唯一没有积水的路走向档案馆。门牌已经卸下，墙上留下四个颜色较浅的方块。
+The tide had not fully withdrawn, and a thin film of oil floated below the stone steps. She pressed the unopened letter into her coat's inner pocket and followed the only unflooded path between the warehouses toward the archive. Its sign was gone, leaving four pale squares on the wall.
 
-周伯站在门内，手里提着一串新钥匙。
+Mr. Zhou stood inside the doorway with a ring of new keys in one hand.
 
-“交接清单上有一间地下档案室。”林把打印纸递过去。
+"The handover list includes a basement archive room." Mira held out the printed page.
 
-“旧图纸。”周伯没有接，“画图的人爱把排水沟也算一层。”
+"Old plans." Mr. Zhou did not take it. "People who draw plans like to count drainage channels as floors."
 
-他说话时看了一眼走廊尽头。那里立着一只空书柜，柜脚周围的灰尘比别处浅。
+As he spoke, he glanced toward the end of the corridor. An empty bookcase stood there, and the dust around its feet was lighter than everywhere else.
 
 <a id="locked-room"></a>
 
-林绕过书柜，墙体凹槽里露出一扇包铁皮的窄门。锁孔里积着黑灰，边缘却有一道新擦痕。
+Mira stepped around the bookcase. A narrow iron-clad door sat inside a recess in the wall. Black dust filled the keyhole, but a fresh scrape marked its rim.
 
-“这是什么？”
+"What's this?"
 
-周伯把钥匙串攥进掌心。“废管道。”
+Mr. Zhou closed his fist around the key ring. "An abandoned conduit."
 
-走廊里没有风，门缝却送出一股潮湿旧纸的气味。
+There was no wind in the corridor, yet the gap beneath the door breathed out the smell of damp, aging paper.
 
 <a id="brass-key"></a>
 
-她摸到口袋里的黄铜钥匙。那是和信一起寄来的唯一物件。她把钥匙送进锁孔，铜齿无声滑到底。
+She touched the brass key in her pocket, the only object that had arrived with the letter. She guided it into the lock. Its teeth slid soundlessly to the end.
 
-她没有转动。
+She did not turn it.
 
-她先拆开那封信。纸上只有一句话：不要相信值班记录。
+Instead, she opened the letter. The page held a single sentence: Do not trust the duty log.
 
-落款是明天。
+It was dated tomorrow.
 
-林看了一眼手机上的渡船提醒，按下退票。
+Mira looked at the ferry reminder on her phone and pressed Cancel Ticket.

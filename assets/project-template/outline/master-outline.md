@@ -1,9 +1,9 @@
-# 总体大纲
+# Master Outline
 
-## 故事概述
-
-
-## 结构节点
+## Story Overview
 
 
-## 结局方向
+## Structural Beats
+
+
+## Ending Direction

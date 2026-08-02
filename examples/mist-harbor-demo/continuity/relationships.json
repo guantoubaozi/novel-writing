@@ -3,13 +3,13 @@
   "characters": [
     {
       "id": "char-lin",
-      "name": "林",
+      "name": "Mira Lin",
       "aliases": [],
-      "role": "调查者",
-      "faction": "无",
+      "role": "investigator",
+      "faction": "none",
       "status": "active",
       "first_chapter": "ch-001",
-      "notes": "随身携带一封未拆的信。",
+      "notes": "Carries an unopened letter with her.",
       "visibility": "author",
       "source_refs": [
         "ch-001#arrival"
@@ -26,7 +26,7 @@
       "status": "active",
       "start_chapter": "ch-001",
       "end_chapter": "",
-      "description": "林在证据异常时选择留下调查。",
+      "description": "Mira stays to investigate when the evidence stops adding up.",
       "certainty": "confirmed",
       "visibility": "author",
       "source_refs": [

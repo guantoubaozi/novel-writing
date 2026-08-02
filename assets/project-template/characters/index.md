@@ -1,9 +1,9 @@
-# 人物索引
+# Character Index
 
-## 主要人物
-
-
-## 次要人物
+## Main Characters
 
 
-## 人物发展记录
+## Supporting Characters
+
+
+## Character Development Notes

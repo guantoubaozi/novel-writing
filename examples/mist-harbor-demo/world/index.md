@@ -1,9 +1,9 @@
-# 世界设定索引
+# Worldbuilding Index
 
-## 环境与地点
-
-
-## 规则与制度
+## Environments and Locations
 
 
-## 历史背景
+## Rules and Institutions
+
+
+## Historical Background

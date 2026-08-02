@@ -208,8 +208,8 @@ class StoryDataTests(unittest.TestCase):
     def test_atomic_write_json_uses_readable_utf8_json(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "story.json"
-            atomic_write_json(path, {"title": "春天"})
-            self.assertEqual(path.read_text(encoding="utf-8"), '{\n  "title": "春天"\n}\n')
+            atomic_write_json(path, {"title": "Café in Spring"})
+            self.assertEqual(path.read_text(encoding="utf-8"), '{\n  "title": "Café in Spring"\n}\n')
 
     def test_cli_invalid_utf8_is_a_clear_error_without_traceback(self):
         with tempfile.TemporaryDirectory() as directory:

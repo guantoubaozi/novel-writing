@@ -1,9 +1,9 @@
-# 故事圣经
+# Story Bible
 
-## 核心设定
-
-
-## 主题与命题
+## Core Premise
 
 
-## 创作边界
+## Themes and Dramatic Questions
+
+
+## Creative Boundaries

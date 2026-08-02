@@ -1,119 +1,121 @@
 # Novel Writing
 
-> 不把推测当正史，不让角色知道不该知道的信息，能从创意一路写到完稿、审校和可视化的长篇小说写作 Skill。
+> An author-controlled Agent Skill for planning, drafting, reviewing, revising, auditing, and visualizing complete long-form fiction projects.
 
-[English](README_EN.md) · [更新记录](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md) · [安全说明](SECURITY.md)
+![Novel Writing social preview](assets/social-preview.png)
 
-## 它解决什么问题
+[Chinese README](README_CN.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
-很多小说写作工具擅长“立刻生成一段正文”，但长篇创作真正困难的是另一件事：写到第 20、50 或 100 章时，人物仍然像同一个人，秘密没有提前泄露，伤势、物品、关系和伏笔都能延续，AI 的建议也不会悄悄变成正式设定。
+## What problem does it solve?
 
-Novel Writing 把小说写作组织成一个作者可控的项目流程：
+Many fiction tools are good at generating a passage immediately. The harder problem in a long novel is preserving coherence at chapter 20, 50, or 100: characters must still behave like themselves, secrets must not leak early, injuries and objects must persist, relationships and clues must evolve consistently, and AI suggestions must not silently become canon.
 
-- 从创意、故事结构、人物弧光到逐章完稿。
-- 用 `confirmed`、`inferred`、`author-planned` 区分正史、推断和作者计划。
-- 检查时间、地点、身体状态、物品、知识边界、人物关系和未回收承诺。
-- 章节完成后提供人工审校、AI 审校、AI 审校并修订三种模式。
-- 生成时间线、人物关系和谜团线索网络，并区分作者版与防剧透读者版。
-- 所有正文、设定、研究和状态都保存在你的项目目录中。
+Novel Writing treats fiction as an author-controlled project rather than a one-shot prose prompt. It supports:
 
-## 为什么这个流程更可靠
+- The full path from premise, story structure, and character arcs to reviewed chapters and a completed manuscript.
+- A three-state model—`confirmed`, `inferred`, and `author-planned`—that keeps canon separate from interpretation and future plans.
+- Continuity checks across chronology, location, physical state, inventory, knowledge boundaries, relationships, and unresolved promises.
+- Manual review, AI review with human curation, and AI review-and-revision with human curation.
+- Timeline, relationship, mystery, and clue visualizations in author and spoiler-safe reader modes.
+- Project-local storage for manuscript, worldbuilding, research, and structured story state.
+
+## Why this workflow is reliable
 
 ```text
-创意与边界
+Premise and creative boundaries
     ↓
-总体大纲与人物弧光
+Master outline and character arcs
     ↓
-作者确定下一章边界
+Author selects the next chapter boundary
     ↓
-读取相关设定、上一章和连续性记录
+Load relevant context, previous chapter, and continuity records
     ↓
-逐章写作 → 六维审校 → 作者选择修订
+Draft chapter → six-dimensional review → author-curated revision
     ↓
-候选状态预览 → 作者确认 → 安全合并
+Preview candidate state → author confirmation → safe merge
     ↓
-时间线 / 人物关系 / 线索可视化
+Timeline / relationship / clue visualization
     ↓
-进入下一章，直到全书完稿
+Continue chapter by chapter until the manuscript is complete
 ```
 
-这个顺序有四个重要作用：
+The order provides four important safeguards:
 
-1. **先确认意图，再生成内容。** 提问必须锚定作者已经提供的材料，减少模板化追问和擅自改写。
-2. **先写正文，再更新正史。** 章节中的新信息先作为候选变化展示，作者确认后才进入结构化状态。
-3. **先报告矛盾，再修复。** AI 不能为了让检查通过而静默修改作者设定。
-4. **先审校，再可视化。** 图表来自已经审阅和确认的故事状态，不会把废稿或推测包装成事实。
+1. **Resolve intent before generating prose.** Questions stay anchored to material the author has already provided, reducing generic interrogation and unauthorized invention.
+2. **Draft before changing canon.** New chapter information is presented as candidate state and becomes structured canon only after explicit author confirmation.
+3. **Report contradictions before repairing them.** The AI cannot silently rewrite author decisions merely to make validation pass.
+4. **Review before visualizing.** Dashboards are generated from reviewed, confirmed state rather than discarded prose or speculation.
 
-## 核心优势
+## Core advantages
 
-### 作者拥有最终解释权
+### The author controls canon
 
-所有故事状态都区分为：
+Every story-state item uses one of three certainty levels:
 
-- `confirmed`：作者已确认的正式设定。
-- `inferred`：根据正文推断、但尚未确认的结论。
-- `author-planned`：作者计划在未来发生或揭示的内容。
+- `confirmed`: canon explicitly accepted by the author.
+- `inferred`: a conclusion supported by the manuscript but not yet confirmed.
+- `author-planned`: a future event, reveal, or secret the author intends to use.
 
-这种设计避免 AI 把建议、猜测和未公开秘密写进正史。
+This prevents suggestions, guesses, and unrevealed plans from silently entering canon.
 
-### 连续性不只是一条时间线
+### Continuity is more than a timeline
 
-审计范围包括：
+Continuity auditing covers:
 
-- 事件顺序、时间跨度、移动和恢复时间。
-- 地点、伤势、疲劳、服装、能力和环境影响。
-- 物品持有、转移、消耗、损坏和访问权限。
-- 作者、读者、叙述者和每个角色分别知道什么。
-- 信任、义务、冲突、亲密度和人物关系变化。
-- 伏笔、谜题、承诺、威胁和预期回收。
+- Event order, elapsed time, travel, and recovery time.
+- Location, injuries, fatigue, clothing, abilities, and environmental effects.
+- Item ownership, transfer, consumption, damage, and access.
+- What the author, reader, narrator, and each character separately know.
+- Trust, obligation, conflict, intimacy, and relationship change.
+- Foreshadowing, mysteries, promises, threats, and expected payoffs.
 
-其中“角色不能回答自己从未听过或见过的信息”是知识边界检查的硬规则。
+A hard knowledge-boundary rule applies: a character cannot answer from information they have never seen, heard, or otherwise learned.
 
-### 完整六维章节审校
+### Complete six-dimensional chapter review
 
-每章完成后可以选择：
+After completing a chapter, choose one of three modes:
 
 1. `manual review only`
 2. `auto review with human curation`
 3. `auto review and auto-revise with human curation`
 
-自动审校覆盖世界观与连续性、节奏与展开、伏笔隐蔽度、主题与焦点、对话个性、叙事清晰度。所有修改仍由作者决定是否接受。
+Automated review covers worldbuilding and continuity, pacing and development, clue subtlety, theme and focus, dialogue individuality, and narrative clarity. The author still decides which changes to accept.
 
-### 作者版与读者版可视化
+### Author and spoiler-safe reader visualizations
 
-离线 HTML Dashboard 支持：
+Offline HTML dashboards support:
 
-- 故事时间线与因果关系。
-- 人物、阵营和关系变化。
-- 谜团、线索、持有人、误导和回收网络。
-- 作者模式：展示计划、隐藏关系和未公开回收。
-- 读者模式：过滤作者专属和剧透信息，并重新匿名化内部 ID。
+- Story chronology and causal relationships.
+- Characters, factions, and changing relationships.
+- Mysteries, clues, holders, red herrings, and payoff networks.
+- Author mode with plans, hidden relationships, and unrevealed payoffs.
+- Reader mode with author-only and spoiler information removed and internal identifiers re-anonymized.
 
-### 安全、可验证的数据更新
+### Safe, verifiable state updates
 
-章节状态采用“候选提取 → 完整预览 → 摘要校验 → 作者确认 → 原子写入 → 再验证”的流程。失败的更新不会部分写入正式状态，也不会静默覆盖已有 Dashboard。
+Chapter state follows a deterministic sequence: candidate extraction → complete preview → digest verification → author confirmation → atomic write → post-write validation. Failed updates cannot partially modify canonical state or silently overwrite an existing dashboard.
 
-项目包含 100 个自动化测试，覆盖数据模型、引用完整性、读者视图脱敏、原子写入、路径与符号链接安全、CLI 和端到端流程。测试证明工程行为，不等同于对文学质量的保证。
+The repository includes 100 automated tests covering the data model, reference integrity, reader redaction, atomic publishing, path and symlink safety, CLI behavior, and the end-to-end workflow. These tests verify engineering behavior; they do not claim to measure literary quality.
 
-## 与常见方案的差异
+## How it differs from common approaches
 
-以下结论来自对同类开源小说写作工具的匿名化比较，不对应或点名任何具体项目：
+The following anonymized comparison summarizes differences observed across open-source fiction-writing tools without naming individual projects:
 
-| 维度 | Novel Writing | 轻量提示词型工具 | 大型多模块套件 | RAG / 图谱型系统 |
+| Dimension | Novel Writing | Lightweight prompt tools | Large modular suites | RAG / graph systems |
 | --- | --- | --- | --- | --- |
-| 从立项到完稿 | 完整单一流程 | 通常偏生成或改写 | 完整但学习成本较高 | 通常完整但流程较重 |
-| 正史权限 | 三态事实模型，作者确认后合并 | 常依赖聊天上下文 | 视模块而定 | 有状态模型但作者权限不一定明确 |
-| 连续性 | 时间、地点、物品、知识、关系、伏笔 | 多为提示词检查 | 覆盖广但实现分散 | 检索强，状态治理复杂 |
-| 数据安全 | 校验、摘要绑定、原子发布、安全路径 | 通常无确定性写入层 | 取决于具体模块 | 常关注检索，较少强调写入确认 |
-| 审校 | 六维审校，始终保留人工选择 | 多为一次性润色 | 模块丰富 | 通常需要额外流水线 |
-| 可视化 | 作者版和防剧透读者版 | 通常没有 | 可能依赖工作台 | 常有图谱但不一定有读者脱敏 |
-| 可维护性 | 标准库实现，100 个自动化测试 | 脚本少、上手快 | 文件和依赖较多 | 工程能力强但部署更重 |
+| Premise to manuscript | One complete workflow | Usually focused on generation or rewriting | Often complete, with a higher learning cost | Often complete, with a heavier workflow |
+| Canon authority | Three-state model with author-confirmed merges | Usually relies on chat context | Depends on the module | Stateful, but author authority may be unclear |
+| Continuity | Time, place, items, knowledge, relationships, and clues | Mostly prompt-based checks | Broad coverage with fragmented implementation | Strong retrieval with complex state governance |
+| Data safety | Validation, digest binding, atomic publishing, and safe paths | Usually no deterministic write layer | Depends on the module | Often emphasizes retrieval over confirmed writes |
+| Review | Six dimensions with human choice preserved | Usually one-pass polishing | Rich review modules | Often requires an additional pipeline |
+| Visualization | Author and spoiler-safe reader views | Usually absent | May depend on a separate workbench | Often includes graphs without reader redaction |
+| Maintainability | Standard-library runtime and 100 automated tests | Simple and quick to start | More files and dependencies | Strong engineering with heavier deployment |
 
-它的定位不是“一键写得最快”，而是让作者在长期创作中更少遗忘、更少越权、更少状态污染。
+The goal is not to write the fastest possible first draft. It is to help authors forget less, preserve authority, and avoid story-state pollution throughout a long project.
 
-## 安装
+## Installation
 
-要求 Python 3.9 或更高版本。运行 Skill 本身不需要第三方 Python 依赖。
+Python 3.9 or later is required. Runtime scripts use only the Python standard library.
 
 ### Codex
 
@@ -122,77 +124,77 @@ git clone https://github.com/guantoubaozi/novel-writing.git
 cp -R novel-writing ~/.codex/skills/novel-writing
 ```
 
-在新会话中使用：
+Start a new session with:
 
 ```text
 Use $novel-writing to create a new novel project.
 ```
 
-也可以把仓库目录放进任何支持 `SKILL.md` 的 Agent Skill 目录中。
+You can also place the repository in the skill directory of any agent that supports the `SKILL.md` standard.
 
-## 三分钟开始
+## Three-minute quick start
 
-### 1. 初始化项目
+### 1. Initialize a project
 
 ```bash
 python3 scripts/init_project.py ~/Documents/my-novel \
-  --title "雾港来信" \
-  --language zh-CN
+  --title "Letters from Mist Harbor" \
+  --language en
 ```
 
-### 2. 建立故事
+### 2. Develop the story
 
 ```text
-使用 $novel-writing，读取 ~/Documents/my-novel。
-帮我明确核心冲突、人物动机、故事边界和总体大纲。
+Use $novel-writing with the project at ~/Documents/my-novel.
+Help me establish the central conflict, character motivations, creative boundaries, and master outline.
 ```
 
-### 3. 写下一章
+### 3. Draft the next chapter
 
 ```text
 /novel:chapter
-项目：~/Documents/my-novel
-按章节计划写第一章。先读取相关设定、人物、上一章和连续性记录。
+Project: ~/Documents/my-novel
+Draft chapter one from the chapter plan. Load the relevant world, character, previous-chapter, and continuity context first.
 ```
 
-### 4. 审校与可视化
+### 4. Review and visualize
 
 ```text
 /novel:review
-对刚完成的章节执行 auto review with human curation。
+Run auto review with human curation on the completed chapter.
 ```
 
 ```text
 /novel:visualize
-预览本章带来的时间线、关系和线索变化，确认后生成作者版 Dashboard。
+Preview the timeline, relationship, and clue changes from this chapter. After confirmation, generate the author dashboard.
 ```
 
-## 支持的命令
+## Supported operations
 
-| 命令 | 用途 |
+| Operation | Purpose |
 | --- | --- |
-| `/novel:new` | 初始化项目和故事前提 |
-| `/novel:outline` | 建立或修订总体大纲与章节计划 |
-| `/novel:chapter` | 写作者选定的下一章 |
-| `/novel:review` | 执行章节六维审校 |
-| `/novel:revise` | 按结构到句子的顺序修订 |
-| `/novel:audit` | 检查结构化连续性和冲突 |
-| `/novel:visualize` | 更新并渲染故事图表 |
-| `/novel:status` | 查看章节、字数、谜题、线索和关系状态 |
+| `/novel:new` | Initialize a project and establish its premise |
+| `/novel:outline` | Create or revise the master outline and chapter plan |
+| `/novel:chapter` | Draft the next author-selected chapter |
+| `/novel:review` | Run the six-dimensional chapter review |
+| `/novel:revise` | Revise from structure down to sentence level |
+| `/novel:audit` | Validate structured continuity and report conflicts |
+| `/novel:visualize` | Update and render story visualizations |
+| `/novel:status` | Report chapter, word-count, mystery, clue, and relationship status |
 
-## 免费版边界
+## Free edition boundary
 
-免费版不限制小说长度、章节数、人物数、审校次数或可视化次数。它可以支持用户完成整部小说。
+The free edition places no limits on novel length, chapter count, character count, reviews, or visualizations. It supports completing an entire novel.
 
-为了保持免费版清晰、可维护，以下高级自动化不包含在本仓库中：
+To keep the edition focused and maintainable, this repository excludes the following advanced automation:
 
-- 自动把整部大纲拆成卷、章和多场景生成批次。
-- 长篇上下文的自动压缩、相关性装配和缓存新鲜度管理。
-- 自动生成跨会话分层交接提示。
+- Automatic decomposition of a full outline into volumes, chapters, and multi-scene generation batches.
+- Automatic long-context compression, relevance assembly, and cache-freshness management.
+- Automatic generation of tiered cross-session handoff prompts.
 
-免费版采用作者维护章节边界、按相关文件读取上下文、逐章完成的方式。
+The free workflow keeps chapter boundaries author-maintained, loads context from relevant project files, and completes the manuscript one chapter at a time.
 
-## 项目结构
+## Repository structure
 
 ```text
 novel-writing/
@@ -207,18 +209,18 @@ novel-writing/
 └── examples/
 ```
 
-## 测试
+## Tests
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-Skill 结构校验：
+Validate the Skill structure with:
 
 ```bash
 python3 /path/to/skill-creator/scripts/quick_validate.py .
 ```
 
-## 许可证
+## License
 
-[MIT License](LICENSE)。欢迎用于个人创作、研究、教学和商业项目。贡献前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+[MIT License](LICENSE). Use it for personal writing, research, education, or commercial projects. Read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing.

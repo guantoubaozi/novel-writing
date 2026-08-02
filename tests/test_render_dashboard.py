@@ -74,13 +74,13 @@ def populated_data():
             "events": [
                 {
                     "id": "event-arrival",
-                    "title": "抵达",
+                    "title": "Arrival",
                     "story_time": "2032-03-04",
                     "sequence": 1,
                     "chapter": "ch-01",
-                    "location": "旧港",
+                    "location": "Old Harbor",
                     "participants": ["char-lan", "char-secret"],
-                    "summary": "林岚看见 </script><script>alert('x')</script>",
+                    "summary": "Mira Lane sees </script><script>alert('x')</script>",
                     "causes": ["event-secret"],
                     "effects": ["event-secret"],
                     "kind": "present",
@@ -90,13 +90,13 @@ def populated_data():
                 },
                 {
                     "id": "event-secret",
-                    "title": "幕后真相",
+                    "title": "Hidden Truth",
                     "story_time": "2032-03-03",
                     "sequence": 0,
                     "chapter": "ch-01",
-                    "location": "档案室",
+                    "location": "Archive Room",
                     "participants": ["char-secret"],
-                    "summary": "只供作者查看",
+                    "summary": "Author-only information",
                     "causes": [],
                     "effects": ["event-arrival"],
                     "kind": "flashback",
@@ -106,13 +106,13 @@ def populated_data():
                 },
                 {
                     "id": "event-mislabelled-plan",
-                    "title": "误标计划",
+                    "title": "Mislabeled Plan",
                     "story_time": "",
                     "sequence": 2,
                     "chapter": "ch-02",
                     "location": "",
                     "participants": ["char-lan"],
-                    "summary": "即使误标也不能泄露",
+                    "summary": "Must not leak even when mislabeled",
                     "causes": [],
                     "effects": [],
                     "kind": "flashforward",
@@ -127,7 +127,7 @@ def populated_data():
             "characters": [
                 {
                     "id": "char-lan",
-                    "name": "林岚",
+                    "name": "Mira Lane",
                     "aliases": ["SECRET_ALIAS"],
                     "role": "SECRET_ROLE",
                     "faction": "SECRET_FACTION",
@@ -139,10 +139,10 @@ def populated_data():
                 },
                 {
                     "id": "char-wu",
-                    "name": "吴砚",
+                    "name": "Elias Wu",
                     "aliases": [],
-                    "role": "同伴",
-                    "faction": "调查组",
+                    "role": "companion",
+                    "faction": "investigation team",
                     "status": "active",
                     "first_chapter": "ch-01",
                     "notes": "",
@@ -151,13 +151,13 @@ def populated_data():
                 },
                 {
                     "id": "char-secret",
-                    "name": "幕后人",
+                    "name": "Hidden Figure",
                     "aliases": [],
-                    "role": "反派",
-                    "faction": "未知",
+                    "role": "antagonist",
+                    "faction": "unknown",
                     "status": "unknown",
                     "first_chapter": "ch-01",
-                    "notes": "隐藏身份",
+                    "notes": "Hidden identity",
                     "visibility": "author",
                     "source_refs": ["ch-01#secret"],
                 },
@@ -167,12 +167,12 @@ def populated_data():
                     "id": "rel-lan-wu",
                     "source": "char-lan",
                     "target": "char-wu",
-                    "type": "同伴",
+                    "type": "ally",
                     "direction": "mutual",
                     "status": "active",
                     "start_chapter": "ch-01",
                     "end_chapter": "ch-99",
-                    "description": "共同调查",
+                    "description": "Investigating together",
                     "certainty": "confirmed",
                     "visibility": "spoiler-safe",
                     "source_refs": ["ch-99#ending"],
@@ -181,12 +181,12 @@ def populated_data():
                     "id": "rel-lan-secret",
                     "source": "char-lan",
                     "target": "char-secret",
-                    "type": "对手",
+                    "type": "opponent",
                     "direction": "directed",
                     "status": "hidden",
                     "start_chapter": "ch-01",
                     "end_chapter": "",
-                    "description": "尚未公开",
+                    "description": "Not yet public",
                     "certainty": "confirmed",
                     "visibility": "spoiler-safe",
                     "source_refs": ["ch-01"],
@@ -198,8 +198,8 @@ def populated_data():
             "mysteries": [
                 {
                     "id": "mystery-clock",
-                    "title": "停摆的钟",
-                    "question": "为何停在三点？",
+                    "title": "Stopped Clock",
+                    "question": "Why did it stop at three?",
                     "status": "open",
                     "introduced_chapter": "ch-01",
                     "resolved_chapter": "",
@@ -208,8 +208,8 @@ def populated_data():
                 },
                 {
                     "id": "mystery-door",
-                    "title": "锁住的门",
-                    "question": "谁锁了门？",
+                    "title": "Locked Door",
+                    "question": "Who locked the door?",
                     "status": "open",
                     "introduced_chapter": "ch-02",
                     "resolved_chapter": "",
@@ -220,8 +220,8 @@ def populated_data():
             "clues": [
                 {
                     "id": "clue-dust",
-                    "title": "灰尘",
-                    "description": "表盘没有灰尘",
+                    "title": "Dust",
+                    "description": "There is no dust on the dial",
                     "status": "noticed",
                     "introduced_chapter": "ch-01",
                     "known_by": ["char-lan", "char-secret"],
@@ -233,8 +233,8 @@ def populated_data():
                 },
                 {
                     "id": "clue-fiber",
-                    "title": "门锁纤维",
-                    "description": "锁孔里有纤维",
+                    "title": "Lock Fiber",
+                    "description": "A fiber is caught inside the lock",
                     "status": "seeded",
                     "introduced_chapter": "ch-02",
                     "known_by": ["char-wu"],
@@ -301,7 +301,7 @@ class DashboardTestCase(unittest.TestCase):
         self.addCleanup(self.temporary_directory.cleanup)
         self.project = initialize_project(
             Path(self.temporary_directory.name) / "project",
-            '<雾城 & "梦">',
+            '<Mist City & "Dream">',
         )
         self.data = populated_data()
         for name in ("timeline", "relationships", "clues"):
@@ -422,11 +422,11 @@ class VisibilityTests(unittest.TestCase):
     def test_reader_keeps_actual_payoff_only_for_resolved_clue(self):
         data = populated_data()
         data["clues"]["clues"][0]["status"] = "resolved"
-        data["clues"]["clues"][0]["actual_payoff"] = "公开答案"
+        data["clues"]["clues"][0]["actual_payoff"] = "Public answer"
 
         filtered = filter_visibility(data, "reader")
 
-        self.assertEqual(filtered["clues"]["clues"][0]["actual_payoff"], "公开答案")
+        self.assertEqual(filtered["clues"]["clues"][0]["actual_payoff"], "Public answer")
 
     def test_unknown_mode_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "mode"):
@@ -504,14 +504,14 @@ class RenderDashboardTests(DashboardTestCase):
         self.assertIn('id="timeline-view"', html)
         self.assertIn('id="relationships-view"', html)
         self.assertIn('id="clues-view"', html)
-        self.assertIn("林岚", html)
-        self.assertIn("&lt;雾城 &amp; &quot;梦&quot;&gt;", html)
-        self.assertNotIn('<雾城 & "梦">', html)
+        self.assertIn("Mira Lane", html)
+        self.assertIn("&lt;Mist City &amp; &quot;Dream&quot;&gt;", html)
+        self.assertNotIn('<Mist City & "Dream">', html)
         self.assertNotIn("https://", html)
         self.assertNotIn("http://", html)
         self.assertNotIn("</script><script>alert", html)
         self.assertIn("Generated from canonical data:", html)
-        self.assertIn('"language":"zh-CN"', html)
+        self.assertIn('"language":"en"', html)
         payload = dashboard_payload(html)
         self.assertEqual(
             payload["enabled_views"],
@@ -698,13 +698,13 @@ class RenderDashboardTests(DashboardTestCase):
         render_dashboard(self.project, output, mode="reader")
         html = output.read_text(encoding="utf-8")
 
-        self.assertIn("林岚", html)
+        self.assertIn("Mira Lane", html)
         for secret in (
-            "幕后人",
-            "幕后真相",
-            "只供作者查看",
-            "误标计划",
-            "尚未公开",
+            "Hidden Figure",
+            "Hidden Truth",
+            "Author-only information",
+            "Mislabeled Plan",
+            "Not yet public",
             "SECRET_ALIAS",
             "SECRET_ROLE",
             "SECRET_FACTION",
@@ -931,8 +931,8 @@ class CommandLineTests(DashboardTestCase):
         )
         for relationship_secret in (
             "SECRET_NOTES",
-            "共同调查",
-            "尚未公开",
+            "Investigating together",
+            "Not yet public",
         ):
             self.assertNotIn(relationship_secret, rendered)
 
@@ -1085,11 +1085,11 @@ class DashboardJavaScriptTests(unittest.TestCase):
             {"handled": False, "calls": 0, "prevented": 0},
         )
 
-    def test_dynamic_geometry_contains_many_long_chinese_labels(self):
+    def test_dynamic_geometry_contains_many_long_labels(self):
         nodes = [
             {
                 "id": "clue-item-%02d" % index,
-                "title": "非常长的中文线索标题用于验证不会裁剪%02d" % index,
+                "title": "A very long English clue title used to verify no clipping %02d" % index,
             }
             for index in range(12)
         ]
@@ -1100,7 +1100,7 @@ class DashboardJavaScriptTests(unittest.TestCase):
         )
         shortened = self.run_core(
             "shortLabel(input.label, 12)",
-            {"label": "这是一个特别特别长的中文图形节点标题"},
+            {"label": "This is an exceptionally long English graph node label"},
         )
         self.assertLessEqual(len(shortened), 12)
 

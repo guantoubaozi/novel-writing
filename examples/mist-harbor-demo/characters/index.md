@@ -1,23 +1,23 @@
-# 人物索引
+# Character Index
 
-## 主要人物
+## Main Characters
 
-### 林
+### Mira Lin
 
-- 身份：档案数字化项目的外部调查员。
-- 外在目标：完成交接并查清母亲失踪记录。
-- 内在需要：接受证据可能不完整，但选择仍需承担责任。
-- 知识边界：第一章只知道母亲失踪、信件存在和自己的工作任务。
-- 说话方式：句子偏短，但遇到私人问题会改用程序和术语回避。
+- Role: External investigator for an archive digitization project.
+- External goal: Complete the handover and clarify the record of her mother's disappearance.
+- Internal need: Accept that evidence may remain incomplete while choices still carry responsibility.
+- Knowledge boundary: In chapter one, she knows only that her mother disappeared, the letter exists, and she has a work assignment.
+- Speech profile: Uses short sentences but retreats into procedure and technical language when questions become personal.
 
-## 次要人物
+## Supporting Characters
 
-### 周伯
+### Mr. Zhou
 
-- 身份：旧港档案馆最后一任管理员。
-- 目标：让拆除顺利完成，同时隐藏一部分旧档案。
-- 说话方式：回答常绕到天气、潮汐和建筑状况，避免直接否认。
+- Role: The last keeper of the Old Harbor Archive.
+- Goal: Let the demolition proceed while concealing part of the old collection.
+- Speech profile: Redirects answers toward weather, tides, and the building's condition instead of issuing direct denials.
 
-## 人物发展记录
+## Character Development Notes
 
-- 林从依赖单一记录，转向建立可相互验证的证据关系。
+- Mira moves from relying on single records to building chains of evidence that can verify one another.

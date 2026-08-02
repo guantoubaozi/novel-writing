@@ -3,8 +3,8 @@
   "mysteries": [
     {
       "id": "mystery-locked-room",
-      "title": "封闭房间",
-      "question": "谁锁上了档案室？",
+      "title": "The Sealed Room",
+      "question": "Who locked the archive room?",
       "status": "open",
       "introduced_chapter": "ch-001",
       "resolved_chapter": "",
@@ -17,8 +17,8 @@
   "clues": [
     {
       "id": "clue-brass-key",
-      "title": "黄铜钥匙",
-      "description": "钥匙齿痕与档案室旧锁一致。",
+      "title": "Brass Key",
+      "description": "The key's teeth match the archive room's old lock.",
       "status": "planned",
       "introduced_chapter": "ch-001",
       "known_by": [

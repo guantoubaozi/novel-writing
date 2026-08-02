@@ -1,6 +1,6 @@
-# 连续性事实
+# Continuity Facts
 
-## 已确认事实
+## Confirmed Facts
 
 
-## 待核实事实
+## Facts to Verify

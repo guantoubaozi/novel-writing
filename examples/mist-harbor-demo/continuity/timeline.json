@@ -3,15 +3,15 @@
   "events": [
     {
       "id": "event-arrival",
-      "title": "林抵达旧港",
+      "title": "Mira Arrives at Old Harbor",
       "story_time": "2030-04-01T08:00:00+08:00",
       "sequence": 1,
       "chapter": "ch-001",
-      "location": "旧港",
+      "location": "Old Harbor",
       "participants": [
         "char-lin"
       ],
-      "summary": "林在清晨抵达旧港。",
+      "summary": "Mira arrives at Old Harbor at dawn.",
       "causes": [],
       "effects": [
         "clue-brass-key"

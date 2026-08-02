@@ -1,6 +1,6 @@
-# 研究资料索引
+# Research Index
 
-## 待研究事项
+## Research Questions
 
 
-## 来源与笔记
+## Sources and Notes

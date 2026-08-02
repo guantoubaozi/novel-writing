@@ -1,6 +1,6 @@
-# 章节索引
+# Chapter Index
 
-## 草稿状态
+## Draft Status
 
 
-## 修订记录
+## Revision History

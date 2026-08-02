@@ -1,9 +1,9 @@
-# 章节索引
+# Chapter Index
 
-## 草稿状态
+## Draft Status
 
-- `ch-001` 第一章：旧港——示例草稿，已完成一次六维审校演示。
+- `ch-001` Chapter One: Old Harbor — example draft with one completed six-dimensional review demonstration.
 
-## 修订记录
+## Revision History
 
-- `ch-001`：补足离港期限、试锁动作、主动留下的选择，并修正周伯的回避式说话方式。
+- `ch-001`: Added the departure deadline, the lock test, Mira's active decision to stay, and Mr. Zhou's evasive speech pattern.

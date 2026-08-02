@@ -1,14 +1,14 @@
-# 叙述声音
+# Narrative Voice
 
-## 目标与边界
+## Goals and Boundaries
 
-- 第三人称限知，紧贴林的感官和判断。
-- 句子克制，避免把局部动作抬升为宏大哲理。
-- 港城通过潮气、铁锈、旧纸、绳索和回声呈现。
-- 对话允许停顿、回避和误解，不写成高效信息交换。
+- Use third-person limited narration anchored in Mira's senses and judgments.
+- Keep sentences restrained; do not inflate local actions into grand philosophy.
+- Render the port city through damp air, rust, old paper, rope, and echoes.
+- Allow pauses, evasions, and misunderstandings in dialogue instead of turning speech into efficient information exchange.
 
-## 一致性检查
+## Consistency Checks
 
-- 林不能知道读者或作者掌握、但她没有来源的信息。
-- 重要情绪用身体反应、行为和注意力变化呈现。
-- 每章至少有一个由林主动选择造成的后果。
+- Mira cannot know information available to the reader or author unless she has a source for it.
+- Express important emotions through physical response, behavior, and changes in attention.
+- Include at least one consequence in every chapter caused by Mira's active choice.

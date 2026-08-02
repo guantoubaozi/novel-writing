@@ -1,6 +1,6 @@
-# 叙述声音
+# Narrative Voice
 
-## 目标与边界
+## Goals and Boundaries
 
 
-## 一致性检查
+## Consistency Checks

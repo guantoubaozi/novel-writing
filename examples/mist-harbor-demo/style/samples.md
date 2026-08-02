@@ -1,6 +1,6 @@
-# 风格样本
+# Style Samples
 
-## 作者自有样本
+## Author-Owned Samples
 
 
-## 观察与提炼
+## Observations and Derived Traits
