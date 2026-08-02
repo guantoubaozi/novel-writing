@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Novel Writing</title>
+  <desc id="description">An author-controlled long-form fiction workflow with continuity, review, and visualization.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101426"/>
+      <stop offset="0.55" stop-color="#171B33"/>
+      <stop offset="1" stop-color="#241A35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFB86B"/>
+      <stop offset="1" stop-color="#E57CFF"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#background)"/>
+  <circle cx="1140" cy="80" r="260" fill="#8A5CFF" opacity="0.11" filter="url(#glow)"/>
+  <circle cx="95" cy="590" r="250" fill="#FF9B63" opacity="0.09" filter="url(#glow)"/>
+
+  <g opacity="0.16" stroke="#BFC6F5" fill="none">
+    <path d="M965 103 L1080 170 L1038 284 L1169 339 L1098 472" stroke-width="2"/>
+    <circle cx="965" cy="103" r="8" fill="#BFC6F5"/>
+    <circle cx="1080" cy="170" r="8" fill="#BFC6F5"/>
+    <circle cx="1038" cy="284" r="8" fill="#BFC6F5"/>
+    <circle cx="1169" cy="339" r="8" fill="#BFC6F5"/>
+    <circle cx="1098" cy="472" r="8" fill="#BFC6F5"/>
+  </g>
+
+  <g transform="translate(84 72)">
+    <rect width="126" height="126" rx="30" fill="#F8F4EA"/>
+    <path d="M34 30h35c14 0 23 8 23 22v47H57c-13 0-23-8-23-22V30Z" fill="#161A30"/>
+    <path d="M57 99V52c0-14 9-22 23-22h12v47c0 14-9 22-23 22H57Z" fill="url(#accent)"/>
+    <path d="M57 51v49" stroke="#F8F4EA" stroke-width="4"/>
+  </g>
+
+  <g font-family="Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="246" y="125" fill="#FFB86B" font-size="24" font-weight="700" letter-spacing="4">OPEN-SOURCE AGENT SKILL</text>
+    <text x="246" y="190" fill="#F8F4EA" font-size="66" font-weight="760" letter-spacing="-2">Novel Writing</text>
+    <text x="84" y="270" fill="#CDD2EC" font-size="30" font-weight="450">Plan, write, review, and visualize long-form fiction</text>
+    <text x="84" y="312" fill="#CDD2EC" font-size="30" font-weight="450">without letting AI inference silently become canon.</text>
+
+    <g transform="translate(84 363)" font-size="21" font-weight="650">
+      <rect width="260" height="54" rx="27" fill="#F8F4EA"/>
+      <text x="24" y="35" fill="#161A30">Complete Free Edition</text>
+      <rect x="276" width="245" height="54" rx="27" fill="#252B4A" stroke="#626B9C"/>
+      <text x="300" y="35" fill="#F8F4EA">100 Automated Tests</text>
+      <rect x="537" width="276" height="54" rx="27" fill="#252B4A" stroke="#626B9C"/>
+      <text x="561" y="35" fill="#F8F4EA">Author Controls Canon</text>
+    </g>
+
+    <g transform="translate(84 486)" font-size="22" font-weight="650">
+      <text x="0" y="0" fill="#FFB86B">PLAN</text>
+      <text x="89" y="0" fill="#727BA9">→</text>
+      <text x="126" y="0" fill="#E6E8F5">DRAFT</text>
+      <text x="225" y="0" fill="#727BA9">→</text>
+      <text x="262" y="0" fill="#E6E8F5">REVIEW</text>
+      <text x="378" y="0" fill="#727BA9">→</text>
+      <text x="415" y="0" fill="#E6E8F5">CONFIRM</text>
+      <text x="554" y="0" fill="#727BA9">→</text>
+      <text x="591" y="0" fill="#E57CFF">VISUALIZE</text>
+    </g>
+
+    <text x="84" y="574" fill="#9EA5CB" font-size="20" font-weight="500">Continuity tracking · Six-dimensional review · Spoiler-safe story dashboards</text>
+    <text x="1105" y="574" fill="#F8F4EA" font-size="19" font-weight="650" text-anchor="end">MIT</text>
+  </g>
+</svg>
