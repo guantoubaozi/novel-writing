@@ -44,6 +44,9 @@ Choose only lenses that can materially change the requested work. Mix lenses so 
 - Test escalation, reversal, aftermath, and changed relationships.
 - Locate setup needed for later foreshadowing or payoff.
 - Challenge beats that move the plot without a character decision.
+- When the optional eight-beat lens would clarify the outline, distinguish opportunity from guaranteed success and ask why the character believes the path is credible.
+- Ask whether disruption changes the situation while reinterpretation changes its meaning; let one event do both when separation adds no value.
+- Test the consequential choice after a turn, while remembering that the decision need not be a counterattack and may instead be retreat, refusal, sacrifice, compromise, or error.
 
 ### Chapter
 

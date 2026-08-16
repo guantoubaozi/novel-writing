@@ -6,6 +6,139 @@
 
 [Chinese README](README_CN.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
+## For writers
+
+From a rough idea to characters, outlines, chapters, and a complete long-form manuscript, Novel Writing helps you develop the story one deliberate step at a time.
+
+This is not a one-click novel generator. It is a writing partner that understands the demands of long-form fiction: it keeps track of relationships, clues, confirmed facts, and planned secrets; helps solve concrete problems in conception, structure, drafting, and revision; and leaves the author's voice and decisions in the author's hands.
+
+## What it can help you do
+
+### Develop an idea into a story
+
+You can begin with a single-sentence premise, a character note, an unfinished outline, or a scene that has stopped working. The skill helps identify:
+
+- The story's central conflict and dramatic question.
+- What the protagonist wants and what resists that pursuit.
+- How characters may grow, decline, awaken, or fail to change.
+- Whether major events form a causal chain rather than a sequence of coincidences.
+- Which secrets, mysteries, relationships, and promises deserve development.
+
+It asks questions anchored in the material you supplied instead of rushing to make creative decisions for you.
+
+### Plan outlines and character arcs
+
+Use it to design a complete novel or to solve only the part currently blocking you. It can help:
+
+- Shape beginnings, escalation, reversals, climax, and resolution.
+- Adjust pacing and conflict pressure.
+- Build character arcs from desire, contradiction, boundaries, and consequential choices.
+- Check whether actions remain credible for the established character.
+- Arrange foreshadowing, secrets, misunderstandings, clues, and reveals.
+- Turn scattered ideas into an actionable chapter plan.
+- Optionally use a flexible eight-beat lens without forcing every novel or chapter into the same formula.
+
+An outline remains a working plan, not an unchangeable contract. Confirmed manuscript facts stay separate from interpretations and future possibilities.
+
+### Draft selected chapters
+
+When you are ready to write prose, the skill uses the confirmed story state, active character context, voice guidance, and chapter purpose to help draft the chapter you selected. It pays attention to:
+
+- Concrete scene goals, resistance, turns, and consequences.
+- Conflict dramatized through action and dialogue.
+- Distinct character voices and knowledge boundaries.
+- Emotion rendered through body, behavior, perception, and selective interiority.
+- Viewpoint access and narrative clarity.
+- Endings that create appropriate forward pressure or meaningful aftermath.
+- Consistency with the project's established voice.
+
+The free workflow keeps chapter boundaries author-maintained, so the system does not silently partition the whole book or take over the writing sequence.
+
+### Review and revise
+
+Submit a passage or completed chapter, or name a specific difficulty. The skill can:
+
+- Find pacing that drags, rushes, or skips the scene readers need to witness.
+- Strengthen underdeveloped dramatic moments.
+- Improve dialogue, action, emotional expression, and viewpoint clarity.
+- Reduce excessive explanation, information dumps, vague abstraction, and forced thematic conclusions.
+- Check motivation, character focus, continuity, foreshadowing subtlety, and prose clarity.
+- Preserve the source and present proposed revisions for human curation.
+
+It never needs to silently overwrite the manuscript. You can inspect suggestions and decide which changes to accept.
+
+### Protect long-form continuity
+
+As a manuscript grows, it becomes easy to lose track of chronology, location, injuries, possessions, information, relationships, and promises. The skill checks:
+
+- Whether character facts remain consistent.
+- Whether travel, recovery, and event order remain plausible.
+- Whether a character knows something they were never shown or told.
+- Whether clues and promises receive fair setup and payoff.
+- Whether secrets leak before their intended reveal.
+- Whether relationship changes have sufficient cause and aftermath.
+- Whether new chapters contradict established story state.
+
+When it finds a conflict, it reports the evidence before proposing a repair instead of deciding which version is canon.
+
+## An author-led way to collaborate
+
+### The author controls canon
+
+Story information remains separated into three states:
+
+- `confirmed`: facts explicitly accepted as canon.
+- `inferred`: interpretations supported by the manuscript but not confirmed.
+- `author-planned`: future events, secrets, or reveals that remain plans.
+
+An inference never becomes canon merely because the AI suggested it, and an unrevealed plan is not treated as something characters already know.
+
+### The author keeps their voice
+
+The goal is not to impose a uniform AI voice. You can provide a voice guide or ask for qualities such as restraint, sharpness, warmth, stronger imagery, greater intimacy, or more narrative distance. The workflow preserves craft traits rather than imitating a living author's protected style.
+
+### The original remains safe
+
+Brainstorming, summaries, review findings, and candidate prose remain non-final until accepted. Manuscript and structured story files are not silently overwritten.
+
+## Who it is for
+
+This skill works for first-time novelists and experienced writers managing a long project. It is especially useful if you:
+
+- Have an idea but do not know how to develop it into a complete story.
+- Are stuck midway through a manuscript and need to recover direction.
+- Struggle to keep character behavior, pacing, or plot structure coherent.
+- Are writing a long novel with many characters, relationships, or clues.
+- Want specific revision guidance rather than a generic evaluation.
+- Want AI assistance without surrendering control of the work.
+
+## Ways to begin
+
+- “I have a story idea about memory trading. Help me develop it into a novel.”
+- “Here are my character notes. Find the central conflict with the most potential.”
+- “Help me design the major character arcs.”
+- “I am stuck on chapter seven. The protagonist must leave home, but the motivation is not strong enough.”
+- “Using the current outline, help me draft chapter three.”
+- “Review this chapter's pacing, motivation, dialogue, and eight-beat progression without forcing every beat to appear.”
+- “Check the first ten chapters for timeline or character contradictions.”
+- “Keep my voice, but make this confrontation feel more immediate.”
+
+You do not need a complete outline or any technical command knowledge. Bring a premise, a passage, a character, or a concrete writing problem.
+
+## Common operations
+
+| Operation | Purpose |
+| --- | --- |
+| `/novel:new` | Start a new novel project |
+| `/novel:outline` | Design or revise the story outline |
+| `/novel:chapter` | Draft an author-selected chapter |
+| `/novel:review` | Review a completed chapter |
+| `/novel:revise` | Revise existing prose |
+| `/novel:audit` | Check continuity and structured story state |
+| `/novel:visualize` | Preview and render story visualizations |
+| `/novel:status` | Review current manuscript progress |
+| `/novel:style-import` | Import a high-level, permission-aware reference style baseline |
+
 ## What problem does it solve?
 
 Many fiction tools are good at generating a passage immediately. The harder problem in a long novel is preserving coherence at chapter 20, 50, or 100: characters must still behave like themselves, secrets must not leak early, injuries and objects must persist, relationships and clues must evolve consistently, and AI suggestions must not silently become canon.
@@ -14,7 +147,8 @@ Novel Writing treats fiction as an author-controlled project rather than a one-s
 
 - The full path from premise, story structure, and character arcs to reviewed chapters and a completed manuscript.
 - A three-state model—`confirmed`, `inferred`, and `author-planned`—that keeps canon separate from interpretation and future plans.
-- Continuity checks across chronology, location, physical state, inventory, knowledge boundaries, relationships, and unresolved promises.
+- Layered character context: canonical dossiers, chapter character cards, and ephemeral scene profiles that preserve individuality without loading every character for every chapter.
+- Phase-specific reading: story-level and hard continuity constraints before drafting, with fine voice, embodiment, and callback consistency checked during revision.
 - Manual review, AI review with human curation, and AI review-and-revision with human curation.
 - Timeline, relationship, mystery, and clue visualizations in author and spoiler-safe reader modes.
 - Project-local storage for manuscript, worldbuilding, research, and structured story state.
@@ -57,6 +191,12 @@ Every story-state item uses one of three certainty levels:
 - `author-planned`: a future event, reveal, or secret the author intends to use.
 
 This prevents suggestions, guesses, and unrevealed plans from silently entering canon.
+
+### Layered character context
+
+Recurring characters use canonical dossiers that explain how background, desire, contradiction, relationships, voice, and embodied habits cause behavior. Each selected chapter contains a compact character card with only the active cast's entry state, goal, pressure, knowledge boundary, activated traits, relationship posture, and exit change. Drafting derives temporary scene profiles from those two layers instead of loading every dossier or every chapter card.
+
+Outlining checks story-level alignment and builds the chapter card. Drafting loads only active dossier sections and hard constraints that can invalidate a scene. The first revision pass broadens evidence for fine-grained voice, gesture, background echoes, motifs, descriptions, and callbacks. This keeps more context available for concrete prose while preserving character depth.
 
 ### Continuity is more than a timeline
 
@@ -212,7 +352,8 @@ novel-writing/
 ## Tests
 
 ```bash
-python3 -m unittest discover -s tests -v
+python3 -m pip install "pytest>=8,<10"
+python3 -m pytest -q
 ```
 
 Validate the Skill structure with:

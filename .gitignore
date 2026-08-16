@@ -8,3 +8,4 @@ htmlcov/
 .vscode/
 *.swp
 *.tmp
+styles/**/raw/

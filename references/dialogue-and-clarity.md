@@ -2,7 +2,7 @@
 
 ## Prepare speaker profiles
 
-Before drafting a scene with dialogue, derive a compact speech profile for every active speaker from confirmed character material and the present situation. Record only distinctions that affect the scene:
+Before drafting a scene with dialogue, derive an ephemeral scene profile for every active speaker from the confirmed `Voice and Embodiment` dossier section, the chapter character card, current relationship state, and present pressure as defined in [character-context.md](character-context.md). Record only distinctions that affect the scene:
 
 - Typical sentence length and completeness.
 - Formality, vocabulary, idiom, and technical precision.
@@ -20,6 +20,14 @@ Do not reduce a character to a catchphrase, accent caricature, or repeated verba
 - Attach dialogue to physical context often enough that speakers remain embodied in the scene. Do not add gestures mechanically after every line.
 - Preserve necessary clarity without making every speaker equally concise, knowledgeable, witty, or correct.
 
+## Keep task dialogue natural
+
+- In planning, questioning, negotiation, or evidence exchange, make each non-emergency turn clear to the listener: name the relevant person or object, requested action, condition, or consequence. Use a fragment such as “Evidence?” only when shared context makes its referent unmistakable.
+- Build recognition, accusation, and suspicion from a plausible information chain plus observable details, not from convenient quirks chosen only to identify a character.
+- When speakers pursue different practical concerns, let each state the concern and explain how it connects to the other person's question. Replace riddle-like rebuttals, polished maxims, and clever reversals with direct spoken reasoning.
+- Break rapid question-and-answer only when the tactic, trust, or emotion changes: add a selective look, movement, pause, or viewpoint inference. Do not attach a gesture to every line.
+- Express competence through role-specific priorities—counts, routes, witnesses, risks, limits—not through uniformly clipped speech. After repairing one speaker's voice, inspect all of that speaker's lines in the scene for the same defect.
+
 ## Test dialogue after drafting
 
 Run these checks on each scene batch:
@@ -29,6 +37,9 @@ Run these checks on each scene batch:
 3. **Mechanical exchange test:** Flag three or more consecutive turns in which everyone speaks in short, complete, accurate plot-delivery lines unless the scene is a command sequence or immediate emergency.
 4. **Pressure test:** Verify that speech changes plausibly with risk, fatigue, status, and relationship rather than preserving one polished register everywhere.
 5. **Oral-language test:** Read the exchange as spoken language. Rewrite lines that are grammatical summaries but implausible utterances.
+6. **Context-completeness test:** For every terse question or answer outside immediate action, verify that the listener can identify its referent, purpose, and practical consequence without author-only context.
+7. **Plausibility-chain test:** Verify that identification, accusation, and knowledge follow a shown report, observation, or inference rather than narrative convenience.
+8. **Speaker-wide repair test:** When one line is clipped, cryptic, or performatively clever, scan the speaker's full scene and revise the register consistently.
 
 ## Keep narration clear
 

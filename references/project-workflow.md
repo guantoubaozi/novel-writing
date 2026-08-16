@@ -16,15 +16,18 @@ Use the project scaffold created by `scripts/init_project.py`:
 
 ## Load the working set
 
-Before outlining, drafting, reviewing, or revising, discover relevant authority by searching the project for the target chapter, active character names, decisive facts, and open threads. Then read the smallest complete working set that preserves accuracy:
+Before outlining, drafting, reviewing, or revising, discover relevant authority by searching the project for the target chapter, active character names and IDs, decisive facts, and open threads. Then read the smallest complete working set that preserves accuracy. Follow the canonical dossier, chapter character card, and ephemeral scene profile model in [character-context.md](character-context.md):
 
 1. `novel.json` and `style/voice.md`.
 2. The relevant sections of `story-bible.md` and `outline/master-outline.md`.
-3. The selected entry in `outline/chapter-plan.md`.
-4. Relevant character and world sections.
-5. The complete `continuity/*` records when continuity can affect the task.
-6. The immediately previous chapter in full.
-7. Research cards that materially constrain the selected chapter.
+3. The selected entry and Chapter Characters card in `outline/chapter-plan.md`.
+4. For outlining, the active dossiers' `Stable Core`, `Relationships`, and `Arc and Boundaries` sections.
+5. For drafting, the active dossiers' `Stable Core`, `Voice and Embodiment`, and `Relationships` sections; add an exact `Deep Background` passage only when it materially shapes the chapter.
+6. Pre-draft hard constraints selected from `continuity/`: chronology, location, physical state, consequential knowledge, current relationships, capability limits, and promises or clues directly touched by the chapter.
+7. The immediately previous chapter in full.
+8. Research cards that materially constrain the selected chapter.
+
+Treat search matches as discovery pointers, not content to paste wholesale. Do not load complete `continuity/*` records by default. During the first revision pass, broaden dossier and continuity evidence only for detail consistency being checked, such as speech habits, recurring gestures, minor descriptions, background echoes, motifs, and small callbacks. Never defer a foundational hard constraint merely because it is detailed.
 
 Use exact Markdown sections when a full file is unnecessary. Do not load the whole manuscript, superseded revisions, generated HTML, unrelated research, or the prior chat transcript by default.
 

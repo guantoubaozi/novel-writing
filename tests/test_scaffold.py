@@ -23,6 +23,13 @@ class ScaffoldTests(unittest.TestCase):
         ):
             self.assertFalse((SKILL_ROOT / relative_path).exists(), relative_path)
 
+    def test_character_dossier_template_exists(self):
+        template = SKILL_ROOT / "assets" / "project-template" / "characters" / "character-template.md"
+        self.assertTrue(template.is_file())
+        content = template.read_text(encoding="utf-8")
+        self.assertIn("## Stable Core", content)
+        self.assertIn("## Voice and Embodiment", content)
+
 
 if __name__ == "__main__":
     unittest.main()

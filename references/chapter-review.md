@@ -34,13 +34,19 @@ Detect rushed story-advancement and description that runs too short or too fast 
 
 Also flag the opposite fault: a consequential turn compressed into a summary sentence that should have been staged as a scene, and structural padding that slows the opening or dilutes the setting — a recap of the previous chapter aimed at readers who already read it, or a manual-style list of procedures, record fields, or specs that does not advance the scene. Propose staging the summarized turn and cutting the padding per [revision.md](revision.md).
 
+#### Optional eight-beat structural diagnostic
+
+When the chapter or its outline uses the optional lens from [plotting.md](plotting.md), check the simplified chain: legible goal, credible opportunity, meaningful obstacle, active response, disruption, reinterpretation where the meaning truly changes, consequential decision, and a resulting new state. A missing named beat is not a finding by itself. Beats may be merged, span chapters, or be not applicable; assess the chapter's intended function in the larger arc before reporting a defect.
+
+Report only concrete structural consequences such as unclear motivation, passive causality, redundant turns, unsupported reinterpretation, a decision with no consequence, or a forced hook. Do not demand a counterattack or victory: retreat, refusal, sacrifice, compromise, failure, and costly mistakes can all complete the decision function. Accept quiet aftermath, emotional or relationship change, and temporary closure as valid new states when they fit the chapter's tone and role.
+
 ### Foreshadowing subtlety
 
 Find planted foreshadowing and hidden threads that the draft states too plainly, spelling out what should stay implied. Propose rewrites that make each such setup oblique — carried by concrete image, action, or offhand detail — so it functions as a genuine hidden thread with a later payoff rather than an announced one. Preserve fair-play evidence; keep the clue discoverable, only less overt.
 
 ### Theme and focus alignment
 
-Revisit the novel's stated theme, core premise, and the focal characters' traits and individuality. Check whether the chapter expresses them, and flag content that drifts from the theme, dilutes the intended characterization, or overshadows the main line with a subordinate element. Propose refocusing that restores emphasis without flattening deliberate contrast.
+Revisit the novel's stated theme, core premise, chapter character card, and the focal characters' canonical dossiers as defined in [character-context.md](character-context.md). Check whether the chapter expresses the selected traits through consequential choice, perception, embodied behavior, relationship posture, and speech. Flag content that drifts from the theme, leaves the chapter card inert, relies on generic reactions despite available background, dilutes intended characterization, or lets a subordinate element overshadow the main line. Propose refocusing that restores emphasis without flattening deliberate contrast.
 
 ### Dialogue individuality and naturalness
 

@@ -2,6 +2,8 @@
 
 ## Define the arc
 
+Use the canonical dossier and chapter character card defined in [character-context.md](character-context.md). Keep cross-chapter psychology in the dossier, and record only the current chapter's activated pressure, tactic, and change in its chapter card.
+
 Record each element separately:
 
 - **External desire:** Name the observable outcome the character pursues.

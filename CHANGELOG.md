@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+
+- Added canonical character dossiers, chapter character cards, and ephemeral scene profiles.
+- Added phase-specific character and continuity loading guidance for outlining, drafting, and revision.
+- Added reusable character dossier and chapter-card project templates.
+- Added `/novel:style-import` for local, permission-aware reference-style abstraction, metrics, and template backtesting.
+
+### Changed
+
+- Replaced default full-continuity reading with relevance-selected pre-draft hard constraints and revision-time detail checks.
+
 ## [0.1.1] - 2026-08-02
 
 ### Changed

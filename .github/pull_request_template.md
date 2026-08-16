@@ -8,7 +8,7 @@ Explain any impact on canon state, manuscript preservation, project files, reade
 
 ## Validation
 
-- [ ] `python3 -m unittest discover -s tests -v`
+- [ ] `python3 -m pytest -q`
 - [ ] Skill frontmatter passes `quick_validate.py`
 - [ ] New or changed behavior has tests
 - [ ] No unpublished manuscript or private data is included

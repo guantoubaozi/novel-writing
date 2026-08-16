@@ -1,4 +1,4 @@
 interface:
   display_name: "Novel Writing"
-  short_description: "Plan, draft, review, and visualize complete long-form fiction"
-  default_prompt: "Use $novel-writing to develop my novel from premise and outline through reviewed chapters and story visualizations."
+  short_description: "Plan, draft, revise, and shape long-form fiction"
+  default_prompt: "Use $novel-writing to develop my novel, preserve continuity, and build an abstract style guide from permitted reference text when useful."

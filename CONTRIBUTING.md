@@ -13,7 +13,8 @@ Thank you for improving Novel Writing.
 Python 3.9 or later is required.
 
 ```bash
-python3 -m unittest discover -s tests -v
+python3 -m pip install "pytest>=8,<10"
+python3 -m pytest -q
 python3 /path/to/skill-creator/scripts/quick_validate.py .
 ```
 
